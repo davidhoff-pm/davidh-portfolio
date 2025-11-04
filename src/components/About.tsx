@@ -27,13 +27,13 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-subtle">
+    <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <Badge variant="outline" className="text-sm px-4 py-1">À Propos</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold">Une Expertise Unique</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <Badge variant="outline" className="text-sm px-4 py-1 border-primary text-primary">À Propos</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold">Une Expertise Unique</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Product Manager spécialisé en Santé Numérique, je transforme les défis du secteur médical 
               en solutions digitales innovantes et conformes aux exigences réglementaires.
             </p>
@@ -43,7 +43,7 @@ const About = () => {
             {strengths.map((strength, index) => (
               <Card 
                 key={index} 
-                className="border-border hover:shadow-elegant transition-all duration-300 hover:-translate-y-1"
+                className="border-border bg-card hover:border-primary transition-all duration-300"
               >
                 <CardContent className="pt-6">
                   <div className="flex gap-4">
@@ -54,7 +54,7 @@ const About = () => {
                     </div>
                     <div className="space-y-2">
                       <h3 className="font-semibold text-lg">{strength.title}</h3>
-                      <p className="text-muted-foreground">{strength.description}</p>
+                      <p className="text-muted-foreground text-sm">{strength.description}</p>
                     </div>
                   </div>
                 </CardContent>

@@ -28,20 +28,20 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-subtle">
+    <section id="contact" className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-bold">
               Prêt à Collaborer ?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Je suis disponible immédiatement pour de nouvelles opportunités en Product Management 
               dans le secteur de la santé numérique.
             </p>
           </div>
 
-          <Card className="shadow-elegant border-primary/20">
+          <Card className="border-border bg-background">
             <CardContent className="pt-6">
               <div className="grid md:grid-cols-3 gap-6">
                 {contactMethods.map((method, index) => (
@@ -70,8 +70,7 @@ const Contact = () => {
               <div className="flex justify-center gap-4 mt-8 pt-8 border-t border-border">
                 <Button 
                   size="lg" 
-                  variant="hero"
-                  className="text-lg"
+                  variant="default"
                   onClick={() => window.location.href = "mailto:david.hoffnung@gmail.com"}
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -80,7 +79,6 @@ const Contact = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="text-lg"
                   onClick={() => window.location.href = "tel:+33628521778"}
                 >
                   <Phone className="h-5 w-5 mr-2" />

@@ -45,19 +45,19 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <Badge variant="outline" className="text-sm px-4 py-1">Parcours</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold">Expérience Professionnelle</h2>
+            <Badge variant="outline" className="text-sm px-4 py-1 border-primary text-primary">Parcours</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold">Expérience Professionnelle</h2>
           </div>
 
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <Card 
                 key={index}
-                className="border-l-4 border-l-primary hover:shadow-elegant transition-all duration-300"
+                className="border-l-4 border-l-primary bg-background hover:border-primary transition-all duration-300"
               >
                 <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">

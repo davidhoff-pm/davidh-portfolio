@@ -20,19 +20,19 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20">
+    <section id="education" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <Badge variant="outline" className="text-sm px-4 py-1">Formation</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold">Parcours Académique</h2>
+            <Badge variant="outline" className="text-sm px-4 py-1 border-primary text-primary">Formation</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold">Parcours Académique</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {education.map((edu, index) => (
               <Card 
                 key={index}
-                className="hover:shadow-elegant transition-all duration-300 hover:-translate-y-1"
+                className="border-border bg-card hover:border-primary transition-all duration-300"
               >
                 <CardHeader>
                   <div className="flex items-start gap-3">

@@ -50,19 +50,19 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gradient-subtle">
+    <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <Badge variant="outline" className="text-sm px-4 py-1">Compétences</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold">Stack Technique & Expertise</h2>
+            <Badge variant="outline" className="text-sm px-4 py-1 border-primary text-primary">Compétences</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold">Stack Technique & Expertise</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {skillCategories.map((category, index) => (
               <Card 
                 key={index}
-                className="hover:shadow-elegant transition-all duration-300 hover:-translate-y-1"
+                className="border-border bg-card hover:border-primary transition-all duration-300"
               >
                 <CardHeader>
                   <CardTitle className="text-xl flex items-center gap-2">
@@ -76,7 +76,7 @@ const Skills = () => {
                       <Badge 
                         key={idx} 
                         variant="secondary"
-                        className="font-normal hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                        className="font-normal text-xs"
                       >
                         {skill}
                       </Badge>
