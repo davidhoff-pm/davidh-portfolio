@@ -96,15 +96,11 @@ const About = () => {
 
                       <CardContent className="pt-6 relative z-10">
                         <div className="flex gap-4">
-                          <motion.div
-                            whileHover={{ rotate: 360, scale: 1.1 }}
-                            transition={{ duration: 0.5 }}
-                            className="flex-shrink-0"
-                          >
+                          <div className="flex-shrink-0">
                             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shadow-lg">
                               <Icon className="h-7 w-7 text-primary" />
                             </div>
-                          </motion.div>
+                          </div>
                           <div className="space-y-2">
                             <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
                               {strength.title}

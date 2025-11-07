@@ -97,18 +97,14 @@ const Experience = () => {
                       {/* Timeline dot */}
                       <motion.div
                         className="absolute left-4 md:left-1/2 -ml-3 md:-ml-4 z-20"
-                        initial={{ scale: 0, rotate: -180 }}
-                        whileInView={{ scale: 1, rotate: 0 }}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
                         transition={{ type: "spring", stiffness: 200, delay: index * 0.2 }}
                         viewport={{ once: true }}
                       >
-                        <motion.div
-                          className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/50"
-                          whileHover={{ scale: 1.3, rotate: 360 }}
-                          transition={{ duration: 0.5 }}
-                        >
+                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/50">
                           <div className="w-3 h-3 rounded-full bg-background" />
-                        </motion.div>
+                        </div>
                       </motion.div>
 
                       {/* Content card */}
@@ -170,13 +166,9 @@ const Experience = () => {
                                     viewport={{ once: true }}
                                     className="flex gap-3 group/item"
                                   >
-                                    <motion.span
-                                      className="text-primary font-bold text-lg"
-                                      whileHover={{ scale: 1.5, rotate: 360 }}
-                                      transition={{ duration: 0.3 }}
-                                    >
+                                    <span className="text-primary font-bold text-lg">
                                       •
-                                    </motion.span>
+                                    </span>
                                     <span className="text-muted-foreground group-hover/item:text-foreground transition-colors">
                                       {highlight}
                                     </span>

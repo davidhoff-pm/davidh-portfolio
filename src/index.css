@@ -2,43 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
+Theme: Medical Light - Professional healthcare design with soft blue medical tones
 */
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 95%;
+    /* Light medical theme */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 20%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 20%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 20%;
 
-    --primary: 174 72% 56%;
-    --primary-foreground: 0 0% 10%;
+    /* Medical blue - reminiscent of healthcare */
+    --primary: 210 70% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 215 25% 20%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 174 72% 56%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 210 70% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 174 72% 56%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 210 70% 50%;
 
     --radius: 0.5rem;
 
-    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 2px 12px -4px hsl(210 50% 40% / 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

@@ -75,13 +75,9 @@ const Education = () => {
 
                     <CardHeader className="relative z-10">
                       <div className="flex items-start gap-3">
-                        <motion.div
-                          className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors"
-                          whileHover={{ rotate: 360, scale: 1.1 }}
-                          transition={{ duration: 0.5 }}
-                        >
+                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                           <GraduationCap className="h-6 w-6 text-primary" />
-                        </motion.div>
+                        </div>
                         <div className="flex-1">
                           <CardTitle className="text-xl group-hover:text-primary transition-colors">
                             {edu.degree}

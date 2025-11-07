@@ -81,13 +81,9 @@ const Contact = () => {
                         viewport={{ once: true }}
                         animate={{ opacity: 1, y: 0 }}
                       >
-                        <motion.div
-                          className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors"
-                          whileHover={{ rotate: 360, scale: 1.1 }}
-                          transition={{ duration: 0.5 }}
-                        >
+                        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
                           <Icon className="h-8 w-8 text-primary" />
-                        </motion.div>
+                        </div>
                         <div className="space-y-1">
                           <p className="text-sm font-medium text-muted-foreground">
                             {method.label}
