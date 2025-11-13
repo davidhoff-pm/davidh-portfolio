@@ -14,7 +14,8 @@ const Projects = () => {
       description: "Solution digitale complète pour le suivi des patients en pathologie chronique avec alertes en temps réel",
       tags: ["Product Management", "Healthcare", "MDR"],
       link: "/projets/plateforme-telesurveillance",
-      type: "professional"
+      type: "professional",
+      image: "/plateforme-telesurveillance.png"
     },
     {
       id: "dispositif-medical-parkinson",
@@ -30,7 +31,8 @@ const Projects = () => {
       description: "Plateforme mobile dédiée au suivi personnalisé des patients atteints de Rectocolite Hémorragique, permettant une meilleure adhésion thérapeutique et un monitoring proactif des poussées inflammatoires",
       tags: ["Product Management", "Mobile Health", "Chronic Disease"],
       link: "/projets/application-suivi-rch",
-      type: "personal"
+      type: "personal",
+      image: "/application-suivi-rch.PNG"
     },
     {
       id: "plateforme-panel-anticorps",
@@ -39,7 +41,8 @@ const Projects = () => {
       tags: ["Product Management", "B2B Healthcare", "Research Tools"],
       link: null,
       type: "personal",
-      wip: true
+      wip: true,
+      image: "/plateforme-panel-anticorps.PNG"
     }
   ];
 
@@ -85,13 +88,27 @@ const Projects = () => {
                     }}
                     className="h-full"
                   >
+                    <div className="space-y-0">
+                      {/* Image du projet */}
+                      <div className="relative w-full h-48 bg-secondary/50 rounded-t-lg overflow-hidden border-t border-x border-border">
+                        <img
+                          src={project.image || `/placeholder.svg`}
+                          alt={project.title}
+                          className={project.image ? "w-full h-full object-cover" : "w-full h-full object-contain opacity-30 p-8"}
+                          onError={(e) => {
+                            // Placeholder si l'image n'existe pas
+                            e.currentTarget.src = '/placeholder.svg';
+                            e.currentTarget.className = 'w-full h-full object-contain opacity-30 p-8';
+                          }}
+                        />
+                      </div>
                     <Card
                       className={`
                         flex flex-col h-full relative overflow-hidden group shadow-sm hover:shadow-md
-                        transition-all duration-300
+                        transition-all duration-300 rounded-t-none
                         ${isProfessional
-                          ? 'border-2 border-primary/40 bg-card hover:border-primary'
-                          : 'border border-border bg-card hover:border-primary/60'
+                          ? 'border-2 border-primary/40 bg-card hover:border-primary border-t-0'
+                          : 'border border-border bg-card hover:border-primary/60 border-t-0'
                         }
                       `}
                     >
@@ -194,6 +211,7 @@ const Projects = () => {
                         </div>
                       </CardContent>
                     </Card>
+                    </div>
                   </motion.div>
                 </AnimatedSection>
               );
