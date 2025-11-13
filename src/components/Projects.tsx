@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, FolderGit2, Briefcase, User } from "lucide-react";
+import { ExternalLink, Github, FolderGit2, Briefcase, User, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
@@ -35,10 +35,11 @@ const Projects = () => {
     {
       id: "plateforme-panel-anticorps",
       title: "Plateforme de création de panel d'anticorps",
-      description: "Solution B2B innovante pour la recherche pharmaceutique permettant aux laboratoires de concevoir et valider des panels d'anticorps personnalisés avec une réduction significative des délais de développement",
+      description: "Application permettant aux chercheurs et techniciens de créer, gérer et exporter des panels d'anticorps pour des expériences d'imagerie par cytométrie de masse. Interface intuitive pour filtrer et sélectionner des anticorps selon différents critères, avec visualisation des métaux disponibles et export PDF/CSV.",
       tags: ["Product Management", "B2B Healthcare", "Research Tools"],
-      link: "/projets/plateforme-panel-anticorps",
-      type: "personal"
+      link: null,
+      type: "personal",
+      wip: true
     }
   ];
 
@@ -142,7 +143,22 @@ const Projects = () => {
                         </div>
 
                         <div className="flex gap-2">
-                          {project.link && (
+                          {project.wip ? (
+                            <motion.div
+                              whileHover={{ scale: 1.03 }}
+                              className="flex-1"
+                            >
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                className="w-full cursor-not-allowed opacity-60"
+                                disabled
+                              >
+                                <Settings className="h-4 w-4 mr-2 animate-spin" />
+                                Work in progress
+                              </Button>
+                            </motion.div>
+                          ) : project.link ? (
                             <motion.div
                               whileHover={{ scale: 1.03 }}
                               whileTap={{ scale: 0.97 }}
@@ -160,7 +176,7 @@ const Projects = () => {
                                 </Link>
                               </Button>
                             </motion.div>
-                          )}
+                          ) : null}
                           {project.github && (
                             <motion.div
                               whileHover={{ scale: 1.05 }}
