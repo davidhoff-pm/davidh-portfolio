@@ -88,16 +88,19 @@ const Projects = () => {
                     }}
                     className="h-full"
                   >
-                    <Card
-                      className={`
-                        flex flex-col h-full relative overflow-hidden group shadow-sm hover:shadow-md
-                        transition-all duration-300
-                        ${isProfessional
-                          ? 'border-2 border-primary/40 bg-card hover:border-primary'
-                          : 'border border-border bg-card hover:border-primary/60'
-                        }
-                      `}
-                    >
+                    {(() => {
+                      const cardContent = (
+                        <Card
+                          className={`
+                            flex flex-col h-full relative overflow-hidden group shadow-sm hover:shadow-md
+                            transition-all duration-300
+                            ${project.link && !project.wip ? 'cursor-pointer' : ''}
+                            ${isProfessional
+                              ? 'border-2 border-primary/40 bg-card hover:border-primary'
+                              : 'border border-border bg-card hover:border-primary/60'
+                            }
+                          `}
+                        >
                       {/* Image du projet */}
                       {project.image && (
                         <div className="relative w-full h-56 bg-secondary/30 overflow-hidden border-b border-border">
@@ -186,12 +189,9 @@ const Projects = () => {
                                 variant="outline"
                                 size="sm"
                                 className="w-full hover:bg-primary hover:text-primary-foreground hover:border-primary"
-                                asChild
                               >
-                                <Link to={project.link}>
-                                  <ExternalLink className="h-4 w-4 mr-2" />
-                                  Voir plus
-                                </Link>
+                                <ExternalLink className="h-4 w-4 mr-2" />
+                                Voir plus
                               </Button>
                             </motion.div>
                           ) : null}
@@ -199,6 +199,7 @@ const Projects = () => {
                             <motion.div
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
+                              onClick={(e) => e.stopPropagation()}
                             >
                               <Button
                                 variant="outline"
@@ -212,6 +213,17 @@ const Projects = () => {
                         </div>
                       </CardContent>
                     </Card>
+                      );
+
+                      if (project.link && !project.wip) {
+                        return (
+                          <Link to={project.link} className="block h-full">
+                            {cardContent}
+                          </Link>
+                        );
+                      }
+                      return cardContent;
+                    })()}
                   </motion.div>
                 </AnimatedSection>
               );
