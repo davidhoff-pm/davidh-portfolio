@@ -16,7 +16,7 @@ const ApplicationSuiviRCH = () => {
         image="/application-suivi-rch.PNG"
         context="Suivi gastro-entérologique nécessitant des données précises sur l'évolution des symptômes (nombre de selles, présence de sang). Réalité terrain : réponses approximatives en consultation faute d'outil de tracking adapté. Paradoxe du marché : zéro application dédiée RCH sur Google Play France, uniquement des compteurs généralistes ou des plateformes institutionnelles complexes."
         problem="Impossibilité de fournir des données fiables pour l'adaptation thérapeutique. Impact : décisions médicales basées sur du déclaratif flou plutôt que sur un suivi objectif."
-        role="Product Owner et développeur sur projet personnel. Utilisateur principal de la solution. Responsable des choix produit et de l'implémentation (avec assistance IA : Claude/Cursor)."
+        role="Product Manager et développeur sur projet personnel. Utilisateur principal de la solution. Responsable des choix produit et de l'implémentation (avec assistance IA : Claude/Cursor)."
         discovery={{
           research: [
             "Revue rapide des solutions existantes via Google Play (preview uniquement).",

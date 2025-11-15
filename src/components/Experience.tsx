@@ -7,7 +7,7 @@ import AnimatedSection from "./AnimatedSection";
 const Experience = () => {
   const experiences = [
     {
-      title: "Product Owner",
+      title: "Product Manager",
       company: "Move In Med",
       period: "Avril 2024 - Juillet 2025",
       highlights: [
