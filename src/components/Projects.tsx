@@ -104,7 +104,7 @@ const Projects = () => {
                           <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-full object-contain p-4"
+                            className="w-full h-full object-cover"
                             onError={(e) => {
                               // Placeholder si l'image n'existe pas
                               e.currentTarget.src = '/placeholder.svg';

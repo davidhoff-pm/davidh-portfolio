@@ -14,11 +14,11 @@ const ProjectLayout = ({ children, image }: ProjectLayoutProps) => {
     <main className="min-h-screen">
       {/* Banner Image */}
       {image && (
-        <div className="w-full h-64 md:h-80 bg-secondary/30 overflow-hidden border-b border-border">
+        <div className="w-full h-80 md:h-96 bg-secondary/30 overflow-hidden border-b border-border">
           <img
             src={image}
             alt="Project banner"
-            className="w-full h-full object-contain p-6 md:p-8"
+            className="w-full h-full object-cover"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
             }}
