@@ -139,6 +139,80 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "application-suivi-rch",
+    title: "Application de suivi pour la rectocolite hémorragique",
+    shortTitle: "Application de suivi RCH",
+    pitch: "Suivi des poussées de RCH, prototypé avec l'IA générative",
+    metrics: "3 semaines de développement · 7-8 itérations",
+    personalRole: "Projet personnel · Product Manager et développeur",
+    description:
+      "Application dédiée au suivi personnalisé des patients atteints de rectocolite hémorragique, pour une meilleure adhésion thérapeutique et un suivi proactif des poussées.",
+    image: "application-suivi-rch.PNG",
+    // Peu de zoom : titre « Répartition des scores », histogramme et cartes de pourcentages visibles.
+    imageFocus: { position: "50% 10%", zoom: 1 },
+    kind: "personnel",
+    tags: ["Prototypage IA", "Maladie chronique"],
+    caseStudy: {
+      tagline:
+        "Un outil personnel de suivi médical développé en 3 semaines, d'un besoin personnel à une solution fonctionnelle grâce à l'IA générative.",
+      keyFigures: [
+        { value: "3 sem.", label: "de développement" },
+        { value: "7-8", label: "itérations" },
+        { value: "0 → 100 %", label: "de données suivies" },
+      ],
+      context: [
+        "Le suivi gastro-entérologique nécessite des données précises sur l'évolution des symptômes (nombre de selles, présence de sang).",
+        "Réalité terrain : des réponses approximatives en consultation, faute d'outil de suivi adapté.",
+        "Paradoxe du marché : aucune application dédiée à la RCH sur Google Play France, uniquement des compteurs généralistes ou des plateformes institutionnelles complexes.",
+      ],
+      problem: [
+        "Impossible de fournir des données fiables pour l'adaptation thérapeutique.",
+        "Impact : des décisions médicales fondées sur du déclaratif flou plutôt que sur un suivi objectif.",
+      ],
+      role: [
+        "Product Manager et développeur sur un projet personnel, et utilisateur principal de la solution.",
+        "Responsable des choix produit et de l'implémentation, avec l'assistance de l'IA (Claude, Cursor).",
+      ],
+      discovery: [
+        "Revue rapide des solutions existantes sur Google Play.",
+        "Besoin minimal identifié : suivi médical + score clinique validé.",
+        "Décision d'architecture immédiate : stockage local (contrainte HDS non viable pour un projet personnel).",
+      ],
+      strategy: [
+        "V1 (semaine 1) : score de Lichtiger adapté, suivi quotidien, export PDF.",
+        "V2 à V7 (semaines 2-3) : ajouts issus de l'usage : IBD-Disk, graphiques, suivi du traitement et de l'observance, notes libres.",
+        "Approche pragmatique : chaque ajout répond à un besoin identifié pendant l'usage.",
+      ],
+      prioritization:
+        "Priorisation guidée par l'usage réel : chaque version répond à un besoin concret identifié pendant l'utilisation.",
+      delivery: [
+        "3 semaines de développement, 7 à 8 itérations.",
+        "Technologies web modernes, IA générative (Claude, Cursor) pour accélérer le développement.",
+        "Principe : fonctionnel plutôt que parfait.",
+        "Architecture simple en stockage local pour éviter les contraintes HDS.",
+      ],
+      artifacts: ["Application fonctionnelle", "7-8 versions itératives", "Export PDF structuré"],
+      results: {
+        user: [
+          "Passage de 0 à 100 % de données suivies (3 semaines d'usage).",
+          "Visualisation de tendances invisibles auparavant (corrélations symptômes / jours).",
+          "Un document PDF structuré prêt pour la consultation, au lieu de notes éparses.",
+        ],
+        businessLabel: "Limites et prochaines étapes",
+        business: [
+          "Limites assumées : mono-utilisateur (pas de validation externe), portabilité limitée (export/import manuel), pas encore de chiffrement.",
+          "Prochaines étapes envisagées : chiffrement, test avec 2 à 3 utilisateurs de confiance, évaluation des options de distribution (association de patients ou partenariat).",
+        ],
+      },
+      learnings: [
+        "L'IA générative transforme la capacité de prototypage individuel.",
+        "Un besoin personnel bien compris vaut mieux qu'une étude de marché théorique.",
+        "Les contraintes réglementaires en santé créent une barrière d'entrée, même pour des solutions simples.",
+        "Passer d'un outil personnel à un produit public demande un saut qualitatif important (RGPD, chiffrement, support).",
+      ],
+    },
+  },
+  {
     slug: "dispositif-medical-parkinson",
     title: "Dispositif médical innovant pour la maladie de Parkinson",
     shortTitle: "Dispositif médical Parkinson",
@@ -223,80 +297,6 @@ export const projects: Project[] = [
         "L'approche terrain : le capteur unique à la taille, dicté par l'observation des usages réels plutôt que par la facilité technique, montre la valeur d'une approche centrée utilisateur, même en deep tech.",
         "La polyvalence comme atout : naviguer entre réglementation, clinique, technique et business donne une vision à 360° et la capacité de traduire des besoins complexes entre parties prenantes.",
         "Maintenir le développement pendant 5 ans avec des ressources minimales a forgé ma capacité à gérer l'ambiguïté, prioriser sous contrainte et garder une vision produit cohérente.",
-      ],
-    },
-  },
-  {
-    slug: "application-suivi-rch",
-    title: "Application de suivi pour la rectocolite hémorragique",
-    shortTitle: "Application de suivi RCH",
-    pitch: "Suivi des poussées de RCH, prototypé avec l'IA générative",
-    metrics: "3 semaines de développement · 7-8 itérations",
-    personalRole: "Projet personnel · Product Manager et développeur",
-    description:
-      "Application dédiée au suivi personnalisé des patients atteints de rectocolite hémorragique, pour une meilleure adhésion thérapeutique et un suivi proactif des poussées.",
-    image: "application-suivi-rch.PNG",
-    // Peu de zoom : titre « Répartition des scores », histogramme et cartes de pourcentages visibles.
-    imageFocus: { position: "50% 10%", zoom: 1 },
-    kind: "personnel",
-    tags: ["Prototypage IA", "Maladie chronique"],
-    caseStudy: {
-      tagline:
-        "Un outil personnel de suivi médical développé en 3 semaines, d'un besoin personnel à une solution fonctionnelle grâce à l'IA générative.",
-      keyFigures: [
-        { value: "3 sem.", label: "de développement" },
-        { value: "7-8", label: "itérations" },
-        { value: "0 → 100 %", label: "de données suivies" },
-      ],
-      context: [
-        "Le suivi gastro-entérologique nécessite des données précises sur l'évolution des symptômes (nombre de selles, présence de sang).",
-        "Réalité terrain : des réponses approximatives en consultation, faute d'outil de suivi adapté.",
-        "Paradoxe du marché : aucune application dédiée à la RCH sur Google Play France, uniquement des compteurs généralistes ou des plateformes institutionnelles complexes.",
-      ],
-      problem: [
-        "Impossible de fournir des données fiables pour l'adaptation thérapeutique.",
-        "Impact : des décisions médicales fondées sur du déclaratif flou plutôt que sur un suivi objectif.",
-      ],
-      role: [
-        "Product Manager et développeur sur un projet personnel, et utilisateur principal de la solution.",
-        "Responsable des choix produit et de l'implémentation, avec l'assistance de l'IA (Claude, Cursor).",
-      ],
-      discovery: [
-        "Revue rapide des solutions existantes sur Google Play.",
-        "Besoin minimal identifié : suivi médical + score clinique validé.",
-        "Décision d'architecture immédiate : stockage local (contrainte HDS non viable pour un projet personnel).",
-      ],
-      strategy: [
-        "V1 (semaine 1) : score de Lichtiger adapté, suivi quotidien, export PDF.",
-        "V2 à V7 (semaines 2-3) : ajouts issus de l'usage : IBD-Disk, graphiques, suivi du traitement et de l'observance, notes libres.",
-        "Approche pragmatique : chaque ajout répond à un besoin identifié pendant l'usage.",
-      ],
-      prioritization:
-        "Priorisation guidée par l'usage réel : chaque version répond à un besoin concret identifié pendant l'utilisation.",
-      delivery: [
-        "3 semaines de développement, 7 à 8 itérations.",
-        "Technologies web modernes, IA générative (Claude, Cursor) pour accélérer le développement.",
-        "Principe : fonctionnel plutôt que parfait.",
-        "Architecture simple en stockage local pour éviter les contraintes HDS.",
-      ],
-      artifacts: ["Application fonctionnelle", "7-8 versions itératives", "Export PDF structuré"],
-      results: {
-        user: [
-          "Passage de 0 à 100 % de données suivies (3 semaines d'usage).",
-          "Visualisation de tendances invisibles auparavant (corrélations symptômes / jours).",
-          "Un document PDF structuré prêt pour la consultation, au lieu de notes éparses.",
-        ],
-        businessLabel: "Limites et prochaines étapes",
-        business: [
-          "Limites assumées : mono-utilisateur (pas de validation externe), portabilité limitée (export/import manuel), pas encore de chiffrement.",
-          "Prochaines étapes envisagées : chiffrement, test avec 2 à 3 utilisateurs de confiance, évaluation des options de distribution (association de patients ou partenariat).",
-        ],
-      },
-      learnings: [
-        "L'IA générative transforme la capacité de prototypage individuel.",
-        "Un besoin personnel bien compris vaut mieux qu'une étude de marché théorique.",
-        "Les contraintes réglementaires en santé créent une barrière d'entrée, même pour des solutions simples.",
-        "Passer d'un outil personnel à un produit public demande un saut qualitatif important (RGPD, chiffrement, support).",
       ],
     },
   },
