@@ -15,11 +15,11 @@ export const BentoCard = ({ title, className, bodyClassName, children }: BentoCa
   const titleId = useId();
 
   return (
-    <section aria-labelledby={titleId} className={cn(cardSurface, "flex flex-col", className)}>
+    <section aria-labelledby={titleId} className={cn(cardSurface, "flex flex-col bento:min-h-0", className)}>
       <h2 id={titleId} className="t-eyebrow mb-2.5 tall:mb-3">
         {title}
       </h2>
-      <div className={cn("flex-1", bodyClassName)}>{children}</div>
+      <div className={cn("flex-1 bento:min-h-0", bodyClassName)}>{children}</div>
     </section>
   );
 };
@@ -39,7 +39,7 @@ export const Chip = ({ children, className }: { children: ReactNode; className?:
 export const StatusBadge = ({ children, className }: { children: ReactNode; className?: string }) => (
   <span
     className={cn(
-      "inline-flex items-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2 py-0.5 text-[13px] font-medium leading-[18px] text-primary-foreground",
+      "inline-flex items-center gap-1.5 whitespace-nowrap rounded-md border border-primary bg-primary px-2 py-0.5 text-[13px] font-medium leading-[18px] text-primary-foreground",
       className,
     )}
   >

@@ -86,19 +86,27 @@ Toutes les couleurs sont en HSL. */
   }
 }
 
-/* Échelle typographique : 13px (méta, sur-titres), 14px (corps), 20px serif (titres),
-38px serif (affichage : nom, chiffres). */
+/* Échelle typographique : 13px (méta, sur-titres), 14px (corps), 15px semi-gras (titres de
+projets), 20px (titre du panneau), 38px serif (affichage : nom, chiffres). */
 @layer components {
   .t-eyebrow {
     @apply text-[13px] font-semibold uppercase leading-[18px] tracking-[0.06em] text-subtle;
   }
 
-  .t-title {
-    @apply font-serif text-[20px] font-normal leading-6 tracking-[-0.005em];
-  }
-
   .t-display {
     @apply font-serif text-[38px] font-normal leading-none tracking-[-0.01em];
+  }
+
+  /* Zone image des vignettes : sa taille vient de la grille, jamais de l'image.
+  Si la place devient trop petite pour être lisible, l'image est masquée. */
+  .vignette-media {
+    container-type: size;
+  }
+}
+
+@container (max-height: 56px) {
+  .vignette-media img {
+    display: none;
   }
 }
 

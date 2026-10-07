@@ -2,15 +2,16 @@ import { Link } from "react-router-dom";
 import { experiences } from "@/data/experiences";
 import { BentoCard } from "./BentoCard";
 
+// Sur bureau, les lignes se partagent la hauteur disponible (séparées par un filet).
 const ExperienceCard = ({ className }: { className?: string }) => (
   <BentoCard title="Expérience" className={className}>
-    <ol className="flex flex-col gap-1 tall:gap-2">
+    <ol className="flex flex-col divide-y bento:h-full">
       {experiences.map((exp) => (
-        <li key={exp.slug}>
+        <li key={exp.slug} className="bento:flex-1">
           <Link
             to={`/parcours/${exp.slug}`}
             state={{ fromHome: true }}
-            className="group grid min-h-11 grid-cols-[84px_minmax(0,1fr)] gap-3 -mx-2 rounded-lg px-2 py-1 transition-colors hover:bg-primary/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="group -mx-2 grid min-h-11 grid-cols-[84px_minmax(0,1fr)] gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-primary/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring bento:h-full"
           >
             <span className="whitespace-nowrap pt-px text-[13px] leading-[18px] tabular-nums text-muted-foreground">
               {exp.period}

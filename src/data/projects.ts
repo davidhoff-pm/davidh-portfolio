@@ -55,7 +55,7 @@ export const projects: Project[] = [
     description:
       "Solution digitale complète pour le suivi des patients en pathologie chronique avec alertes en temps réel.",
     image: "plateforme-telesurveillance.png",
-    imageFocus: { position: "62% 30%", zoom: 1.35 },
+    imageFocus: { position: "60% 35%", zoom: 1.25 },
     kind: "professionnel",
     tags: ["Migration produit", "User research"],
     caseStudy: {
@@ -140,7 +140,7 @@ export const projects: Project[] = [
     description:
       "Développement d'un dispositif médical innovant de classe I pour l'amélioration de la qualité de vie des patients.",
     image: "dispositif-medical-parkinson.png",
-    imageFocus: { position: "20% 40%", zoom: 1.4 },
+    imageFocus: { position: "25% 35%", zoom: 1.25 },
     kind: "professionnel",
     tags: ["Recherche clinique", "Deep tech"],
     caseStudy: {
@@ -227,7 +227,7 @@ export const projects: Project[] = [
     description:
       "Application dédiée au suivi personnalisé des patients atteints de rectocolite hémorragique, pour une meilleure adhésion thérapeutique et un suivi proactif des poussées.",
     image: "application-suivi-rch.PNG",
-    imageFocus: { position: "50% 22%", zoom: 1.3 },
+    imageFocus: { position: "50% 38%", zoom: 1.25 },
     kind: "personnel",
     tags: ["Prototypage IA", "Maladie chronique"],
     caseStudy: {
@@ -298,7 +298,7 @@ export const projects: Project[] = [
     description:
       "Application permettant aux chercheurs et techniciens de créer, gérer et exporter des panels d'anticorps pour des expériences d'imagerie par cytométrie de masse. Interface pour filtrer et sélectionner des anticorps selon différents critères, avec visualisation des métaux disponibles et export PDF/CSV.",
     image: "plateforme-panel-anticorps.PNG",
-    imageFocus: { position: "25% 30%", zoom: 1.5 },
+    imageFocus: { position: "30% 40%", zoom: 1.25 },
     kind: "personnel",
     wip: true,
     tags: ["Outil de recherche", "B2B santé"],

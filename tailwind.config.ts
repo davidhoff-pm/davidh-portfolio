@@ -14,12 +14,11 @@ export default {
     },
     extend: {
       screens: {
-        // Grille bento sur une seule page : bureau assez large et assez haut pour tout afficher.
-        bento: { raw: "(min-width: 1024px) and (min-height: 600px)" },
-        // Écrans de bureau plus hauts (ex. 1440x900) : un peu plus d'air.
+        // Grille bento à hauteur d'écran fixe. En dessous de 1280px de large, il faut plus de hauteur
+        // pour que le texte (qui revient davantage à la ligne) tienne sans débordement.
+        bento: { raw: "(min-width: 1280px) and (min-height: 640px), (min-width: 1024px) and (min-height: 740px)" },
+        // Écrans de bureau plus hauts (ex. 1440x900) : un peu plus d'air, projets en 2x2.
         tall: { raw: "(min-width: 1024px) and (min-height: 820px)" },
-        // Bureau très bas (ex. 1280x720 avec la barre du navigateur) : on masque le superflu.
-        short: { raw: "(min-width: 1024px) and (min-height: 600px) and (max-height: 719px)" },
       },
       fontFamily: {
         sans: ['"Inter Variable"', "Inter", "ui-sans-serif", "system-ui", "sans-serif"],

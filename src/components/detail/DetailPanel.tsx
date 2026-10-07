@@ -28,7 +28,7 @@ const DetailPanel = ({ open, onClose, eyebrow, title, contentKey, children }: De
         </header>
         {/* La clé remet le défilement en haut quand on passe d'un détail à un autre. */}
         <div key={contentKey} className="flex-1 overflow-y-auto px-4 pb-10 pt-6 sm:px-7">
-          <Dialog.Title className="font-serif text-[clamp(1.6rem,6vw,2.375rem)] font-normal leading-[1.1] tracking-[-0.01em]">
+          <Dialog.Title className="text-[20px] font-semibold leading-7 tracking-[-0.01em] [text-wrap:balance]">
             {title}
           </Dialog.Title>
           <div className="mt-4">{children}</div>

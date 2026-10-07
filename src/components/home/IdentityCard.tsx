@@ -44,7 +44,7 @@ const IdentityCard = ({ className }: { className?: string }) => (
       ))}
     </ul>
 
-    <div className="mt-5 grid grid-cols-2 gap-2 bento:mt-auto bento:flex bento:flex-wrap bento:pt-5">
+    <div className="mt-4 grid grid-cols-2 gap-2 tall:mt-5 bento:flex bento:flex-wrap">
       <a href={`mailto:${profile.email}`} title={profile.email} className={primaryButton}>
         <Mail aria-hidden />
         Me contacter

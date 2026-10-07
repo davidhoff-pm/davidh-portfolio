@@ -9,7 +9,7 @@ const StatsCards = ({ className }: { className?: string }) => (
   >
     {stats.map((stat) => (
       <div key={stat.label} className={cn(cardSurface, "flex flex-col gap-2")}>
-        <span className="t-display whitespace-nowrap text-primary max-[400px]:text-[32px]">{stat.value}</span>
+        <span className="t-display whitespace-nowrap text-primary [@media(max-width:400px)]:text-[32px]">{stat.value}</span>
         <span className="text-[14px] leading-5 text-muted-foreground">{stat.label}</span>
       </div>
     ))}

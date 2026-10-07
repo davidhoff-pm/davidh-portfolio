@@ -61,15 +61,19 @@ const Index = ({ panel }: IndexProps) => {
 
   return (
     <>
-      {/* Bureau : 12 colonnes, colonne profil (4) + colonne travaux (8). Les gouttières internes
-          étant identiques, les 4 chiffres clés tombent exactement sur 2 colonnes chacun.
-          Hauteur minimale = écran : le contenu ne défile jamais dans une carte. */}
-      <main className="mx-auto grid max-w-[1600px] grid-cols-1 gap-3 p-3 md:grid-cols-2 md:p-6 bento:min-h-dvh bento:grid-cols-12 bento:grid-rows-[1fr] bento:p-3 tall:gap-4 tall:p-5">
-        <div className="contents bento:col-span-4 bento:flex bento:flex-col bento:gap-3 tall:gap-4">
-          <IdentityCard className="order-1 md:col-span-2 bento:order-none bento:flex-1" />
-          <ExperienceCard className="order-4 bento:order-none" />
+      {/* Bureau : grille 12 colonnes à hauteur d'écran fixe (100dvh), colonne profil (4) +
+          colonne travaux (8). Les gouttières étant identiques, les 4 chiffres clés tombent
+          exactement sur 2 colonnes chacun. Les rangées flexibles (Expérience, Projets) absorbent
+          la hauteur restante ; les images ne participent jamais au calcul des hauteurs.
+          Budget à 1280x650 (hauteur utile 618px) :
+          - gauche : identité ~264 + 12 + expérience ~304 = ~580
+          - droite : stats ~118 + 12 + projets (reste ~328) + 12 + expertise & formation ~148 */}
+      <main className="mx-auto grid max-w-[1600px] grid-cols-1 gap-3 p-3 md:grid-cols-2 md:p-6 bento:h-dvh bento:grid-cols-12 bento:grid-rows-[minmax(0,1fr)] bento:p-4 tall:gap-4 tall:p-5">
+        <div className="contents bento:col-span-4 bento:flex bento:min-h-0 bento:flex-col bento:gap-3 tall:gap-4">
+          <IdentityCard className="order-1 md:col-span-2 bento:order-none bento:shrink-0" />
+          <ExperienceCard className="order-4 bento:order-none bento:flex-1" />
         </div>
-        <div className="contents bento:col-span-8 bento:grid bento:grid-rows-[auto_1fr_auto] bento:gap-3 tall:gap-4">
+        <div className="contents bento:col-span-8 bento:grid bento:min-h-0 bento:grid-rows-[auto_minmax(0,1fr)_auto] bento:gap-3 tall:gap-4">
           <StatsCards className="order-2 md:col-span-2 bento:order-none" />
           <ProjectsCard className="order-3 md:col-span-2 bento:order-none" />
           <ExpertiseEducationCard className="order-5 bento:order-none" />
