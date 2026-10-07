@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { experiences } from "@/data/experiences";
 import { BentoCard } from "./BentoCard";
 
-// Sur bureau, les lignes se partagent la hauteur disponible (séparées par un filet).
+// Sur bureau, les lignes se partagent la hauteur disponible et leur contenu est centré
+// verticalement : pas de vide en bas de carte. Sur les écrans hauts et larges, la phrase courte est
+// remplacée par la description complète (déjà présente dans les données).
 const ExperienceCard = ({ className }: { className?: string }) => (
   <BentoCard title="Expérience" className={className}>
     <ol className="flex flex-col divide-y bento:h-full">
@@ -11,7 +13,7 @@ const ExperienceCard = ({ className }: { className?: string }) => (
           <Link
             to={`/parcours/${exp.slug}`}
             state={{ fromHome: true }}
-            className="group -mx-2 grid min-h-11 grid-cols-[84px_minmax(0,1fr)] gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-primary/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring bento:h-full"
+            className="group -mx-2 grid min-h-11 grid-cols-[84px_minmax(0,1fr)] content-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-primary/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring bento:h-full"
           >
             <span className="whitespace-nowrap pt-px text-[13px] leading-[18px] tabular-nums text-muted-foreground">
               {exp.period}
@@ -20,7 +22,8 @@ const ExperienceCard = ({ className }: { className?: string }) => (
               <span className="block text-[14px] font-medium leading-5 transition-colors group-hover:text-primary">
                 {exp.title} <span className="font-normal text-muted-foreground">· {exp.company}</span>
               </span>
-              <span className="block text-[14px] leading-5 text-muted-foreground">{exp.summary}</span>
+              <span className="block text-[14px] leading-5 text-muted-foreground roomy:hidden">{exp.summary}</span>
+              <span className="hidden text-[14px] leading-5 text-muted-foreground roomy:block">{exp.description}</span>
             </span>
           </Link>
         </li>

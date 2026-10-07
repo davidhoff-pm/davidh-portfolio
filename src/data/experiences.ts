@@ -39,10 +39,10 @@ export const experiences: Experience[] = [
     description:
       "Pilotage produit d'une plateforme de télésurveillance et de coordination des soins : roadmap, discovery, delivery et conformité MDR.",
     highlights: [
-      "Élaboration de la roadmap produit avec +150 retours utilisateurs",
+      "Élaboration de la roadmap produit avec 150+ retours utilisateurs",
       "Product Discovery : entretiens utilisateurs, maquettes Figma, définition des workflows",
       "Product Delivery : gestion de 4 releases de 3 mois en méthodologie Agile (Scrum)",
-      "Transition réussie de +20 clients vers nouvelle plateforme",
+      "Transition réussie de 20+ clients vers la nouvelle plateforme",
       "Conformité MDR en collaboration avec la responsable QARA",
     ],
     tags: ["Product strategy", "Scrum"],

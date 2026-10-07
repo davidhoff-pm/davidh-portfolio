@@ -20,7 +20,6 @@ const ProjectDetail = ({ project }: { project: Project }) => {
         </Dialog.Description>
         <div className="flex flex-wrap items-center gap-1.5">
           {project.wip && <StatusBadge>En cours</StatusBadge>}
-          <Chip>{project.kind === "professionnel" ? "Projet professionnel" : "Projet personnel"}</Chip>
           {project.tags.map((tag) => (
             <Chip key={tag}>{tag}</Chip>
           ))}

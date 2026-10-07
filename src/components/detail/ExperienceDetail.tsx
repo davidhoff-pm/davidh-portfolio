@@ -13,11 +13,9 @@ const ExperienceDetail = ({ experience }: { experience: Experience }) => {
   return (
     <article className="space-y-8">
       <div className="space-y-3">
-        <p className="text-[14px] leading-5 text-muted-foreground">
-          <span className="font-medium text-primary">{experience.company}</span>
-          {experience.companyNote && ` · ${experience.companyNote}`}
-          <span className="block text-[13px] leading-[18px] tabular-nums">{experience.periodDetail}</span>
-        </p>
+        {experience.companyNote && (
+          <p className="text-[14px] leading-5 text-muted-foreground">{experience.companyNote}</p>
+        )}
         <Dialog.Description className="text-[14px] leading-[22px] text-foreground">
           {experience.description}
         </Dialog.Description>

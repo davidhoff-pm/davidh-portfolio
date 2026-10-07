@@ -55,21 +55,21 @@ export const projects: Project[] = [
     description:
       "Solution digitale complète pour le suivi des patients en pathologie chronique avec alertes en temps réel.",
     image: "plateforme-telesurveillance.png",
-    imageFocus: { position: "60% 35%", zoom: 1.25 },
+    imageFocus: { position: "55% 45%", zoom: 1.6 },
     kind: "professionnel",
     tags: ["Migration produit", "User research"],
     caseStudy: {
       tagline:
-        "Comment j'ai orchestré la transition de 5000+ patients vers une nouvelle génération d'outils de coordination des soins.",
+        "Comment j'ai orchestré la transition de 5 000+ patients vers une nouvelle génération d'outils de coordination des soins.",
       keyFigures: [
-        { value: "5000+", label: "patients sur la plateforme historique" },
+        { value: "5 000+", label: "patients sur la plateforme historique" },
         { value: "20", label: "entretiens approfondis en 4 mois" },
-        { value: "4", label: "releases trimestrielles" },
-        { value: "−30 %", label: "de temps de déploiement" },
+        { value: "4", label: "releases en 1 an" },
+        { value: "−30 %", label: "de temps de déploiement" },
       ],
       context: [
         "Scale-up HealthTech spécialisée dans la télésurveillance et la coordination des parcours de soins.",
-        "Deux plateformes en parallèle : une version historique (5000+ patients, 400+ professionnels de santé) et une nouvelle plateforme lancée depuis un an (environ 500 à 1000 patients actifs).",
+        "Deux plateformes en parallèle : une version historique (5 000+ patients, 400+ professionnels de santé) et une nouvelle plateforme lancée depuis un an (environ 500 à 1 000 patients actifs).",
         "Un carrefour stratégique : maintenir le socle de clients historiques (Instituts de Santé spécialisés en oncologie) tout en se développant sur de nouveaux marchés (Centres de Réadaptation Thérapeutique en gériatrie, télésurveillance en santé mentale).",
       ],
       problem: [
@@ -118,7 +118,7 @@ export const projects: Project[] = [
         ],
         business: [
           "3 clients migrés avec succès, validant la stratégie de transition.",
-          "30 % de réduction du temps de déploiement grâce au workflow de paramétrage.",
+          "30 % de réduction du temps de déploiement grâce au workflow de paramétrage.",
           "Amorce de la réduction des coûts de maintenance via la consolidation sur une seule plateforme.",
           "Ouverture confirmée vers le marché des CRT avec une solution adaptée.",
           "Les quick wins ont commencé à convaincre les équipes commerciales de la valeur de la nouvelle plateforme.",
@@ -140,7 +140,7 @@ export const projects: Project[] = [
     description:
       "Développement d'un dispositif médical innovant de classe I pour l'amélioration de la qualité de vie des patients.",
     image: "dispositif-medical-parkinson.png",
-    imageFocus: { position: "25% 35%", zoom: 1.25 },
+    imageFocus: { position: "32% 45%", zoom: 1.6 },
     kind: "professionnel",
     tags: ["Recherche clinique", "Deep tech"],
     caseStudy: {
@@ -154,8 +154,8 @@ export const projects: Project[] = [
       ],
       context: [
         "Startup de 3 personnes développant un dispositif médical innovant pour les patients atteints de la maladie de Parkinson.",
-        "Une v1 100 % hardware, fondée sur le métronome auditif, technique validée en rééducation, pour aider les patients à retrouver une marche plus fluide.",
-        "Un marché significatif : 150 000 patients en France souffrant de troubles de la marche liés à Parkinson, 25 000 nouveaux cas par an.",
+        "Une v1 100 % hardware, fondée sur le métronome auditif, technique validée en rééducation, pour aider les patients à retrouver une marche plus fluide.",
+        "Un marché significatif : 150 000 patients en France souffrant de troubles de la marche liés à Parkinson, 25 000 nouveaux cas par an.",
         "Seuls acteurs avec un produit commercialisé, les concurrents ayant privilégié la validation clinique avant la mise sur le marché.",
       ],
       problem: [
@@ -208,7 +208,7 @@ export const projects: Project[] = [
           "Financement i-LAB obtenu, validant le potentiel d'innovation.",
           "5 KOL engagés, créant une légitimité scientifique.",
           "Base solide pour une future levée de fonds (protocole clinique prêt, système qualité en cours).",
-          "Blocages : base de recharge non finalisée faute de 100 k€ supplémentaires, étude clinique non lancée (coût prohibitif), certification ISO 13485 non obtenue (processus interrompu).",
+          "Blocages : base de recharge non finalisée faute de 100 k€ supplémentaires, étude clinique non lancée (coût prohibitif), certification ISO 13485 non obtenue (processus interrompu).",
         ],
       },
       learnings: [
@@ -227,7 +227,7 @@ export const projects: Project[] = [
     description:
       "Application dédiée au suivi personnalisé des patients atteints de rectocolite hémorragique, pour une meilleure adhésion thérapeutique et un suivi proactif des poussées.",
     image: "application-suivi-rch.PNG",
-    imageFocus: { position: "50% 38%", zoom: 1.25 },
+    imageFocus: { position: "50% 43%", zoom: 1.6 },
     kind: "personnel",
     tags: ["Prototypage IA", "Maladie chronique"],
     caseStudy: {
@@ -236,7 +236,7 @@ export const projects: Project[] = [
       keyFigures: [
         { value: "3 sem.", label: "de développement" },
         { value: "7-8", label: "itérations" },
-        { value: "0 → 100 %", label: "de données suivies" },
+        { value: "0 → 100 %", label: "de données suivies" },
       ],
       context: [
         "Le suivi gastro-entérologique nécessite des données précises sur l'évolution des symptômes (nombre de selles, présence de sang).",
@@ -272,7 +272,7 @@ export const projects: Project[] = [
       artifacts: ["Application fonctionnelle", "7-8 versions itératives", "Export PDF structuré"],
       results: {
         user: [
-          "Passage de 0 à 100 % de données suivies (3 semaines d'usage).",
+          "Passage de 0 à 100 % de données suivies (3 semaines d'usage).",
           "Visualisation de tendances invisibles auparavant (corrélations symptômes / jours).",
           "Un document PDF structuré prêt pour la consultation, au lieu de notes éparses.",
         ],
@@ -298,7 +298,7 @@ export const projects: Project[] = [
     description:
       "Application permettant aux chercheurs et techniciens de créer, gérer et exporter des panels d'anticorps pour des expériences d'imagerie par cytométrie de masse. Interface pour filtrer et sélectionner des anticorps selon différents critères, avec visualisation des métaux disponibles et export PDF/CSV.",
     image: "plateforme-panel-anticorps.PNG",
-    imageFocus: { position: "30% 40%", zoom: 1.25 },
+    imageFocus: { position: "45% 18%", zoom: 1.6 },
     kind: "personnel",
     wip: true,
     tags: ["Outil de recherche", "B2B santé"],

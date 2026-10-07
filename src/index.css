@@ -102,6 +102,26 @@ projets), 20px (titre du panneau), 38px serif (affichage : nom, chiffres). */
   .vignette-media {
     container-type: size;
   }
+
+  /* Instrument Serif n'existe qu'en graisse 400 : léger contour pour épaissir les chiffres. */
+  .stat-weight {
+    -webkit-text-stroke: 0.5px currentColor;
+  }
+
+  /* Barre de défilement fine et discrète (panneau de détail). */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: hsl(var(--border));
+  }
 }
 
 @container (max-height: 56px) {
