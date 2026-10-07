@@ -2,47 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
-All colors MUST be HSL.
-Theme: Medical Light - Professional healthcare design with soft blue medical tones
-*/
+/* Design system : fond clair chaud, cartes blanches, une seule couleur d'accent (teal profond).
+Toutes les couleurs sont en HSL. */
 
 @layer base {
   :root {
-    /* Light medical theme */
-    --background: 210 20% 98%;
-    --foreground: 215 25% 20%;
+    --background: 60 23% 97%; /* #FAFAF7 */
+    --foreground: 240 6% 10%; /* #18181B */
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 20%;
+    --card-foreground: 240 6% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 20%;
+    --popover-foreground: 240 6% 10%;
 
-    /* Medical blue - reminiscent of healthcare */
-    --primary: 210 70% 50%;
+    --primary: 175 77% 26%; /* #0F766E */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 95%;
-    --secondary-foreground: 215 25% 20%;
+    --secondary: 60 9% 95%;
+    --secondary-foreground: 240 6% 10%;
 
-    --muted: 210 20% 95%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 60 9% 95%;
+    --muted-foreground: 240 4% 46%; /* #71717A */
 
-    --accent: 210 70% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 60 9% 95%;
+    --accent-foreground: 240 6% 10%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 88%;
-    --input: 210 20% 88%;
-    --ring: 210 70% 50%;
+    --border: 40 8% 89%;
+    --input: 40 8% 89%;
+    --ring: 175 77% 26%;
 
-    --radius: 0.5rem;
+    /* Rayon des composants (boutons, chips). Les cartes utilisent rounded-2xl (16px). */
+    --radius: 0.625rem;
+  }
 
-    --shadow-card: 0 2px 12px -4px hsl(210 50% 40% / 0.15);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 240 6% 7%;
+      --foreground: 0 0% 96%;
+
+      --card: 240 5% 10%;
+      --card-foreground: 0 0% 96%;
+
+      --popover: 240 5% 10%;
+      --popover-foreground: 0 0% 96%;
+
+      --primary: 173 58% 52%;
+      --primary-foreground: 240 6% 7%;
+
+      --secondary: 240 4% 15%;
+      --secondary-foreground: 0 0% 96%;
+
+      --muted: 240 4% 15%;
+      --muted-foreground: 240 5% 65%;
+
+      --accent: 240 4% 15%;
+      --accent-foreground: 0 0% 96%;
+
+      --border: 240 4% 18%;
+      --input: 240 4% 18%;
+      --ring: 173 58% 52%;
+    }
   }
 }
 
@@ -51,11 +74,21 @@ Theme: Medical Light - Professional healthcare design with soft blue medical ton
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    -webkit-text-size-adjust: 100%;
   }
 
-  html {
-    scroll-behavior: smooth;
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
