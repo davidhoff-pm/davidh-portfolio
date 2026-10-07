@@ -36,7 +36,13 @@ export interface Project {
   slug: string;
   title: string;
   shortTitle: string;
-  summary: string;
+  // Une ou deux lignes problème / résultat, affichées sur la carte.
+  pitch: string;
+  // Ligne de métriques de la carte (chiffres tirés de l'étude de cas).
+  metrics: string;
+  // Rôle pour un projet personnel (sinon : rôle, entreprise et période de l'expérience liée).
+  personalRole?: string;
+  // Texte plus complet, affiché à la place du pitch sur les grands écrans.
   description: string;
   image: string;
   imageFocus: ImageFocus;
@@ -50,11 +56,12 @@ export const projects: Project[] = [
     slug: "plateforme-telesurveillance",
     title: "Plateforme de télésurveillance pour pathologies chroniques",
     shortTitle: "Plateforme de télésurveillance",
-    summary: "Suivi des patients en pathologie chronique",
+    pitch: "Migration vers un nouvel outil de coordination des soins",
+    metrics: "5 000+ patients · 20+ clients dans la migration préparée, 3 migrés",
     description:
       "Solution digitale complète pour le suivi des patients en pathologie chronique avec alertes en temps réel.",
     image: "plateforme-telesurveillance.png",
-    imageFocus: { position: "55% 45%", zoom: 1.6 },
+    imageFocus: { position: "55% 40%", zoom: 1.3 },
     kind: "professionnel",
     tags: ["Migration produit", "User research"],
     caseStudy: {
@@ -135,11 +142,12 @@ export const projects: Project[] = [
     slug: "dispositif-medical-parkinson",
     title: "Dispositif médical innovant pour la maladie de Parkinson",
     shortTitle: "Dispositif médical Parkinson",
-    summary: "Classe I, 200 patients équipés",
+    pitch: "Aide à la marche par métronome auditif, v1 puis prototype v2.0",
+    metrics: "Classe I, 200 patients équipés",
     description:
       "Développement d'un dispositif médical innovant de classe I pour l'amélioration de la qualité de vie des patients.",
     image: "dispositif-medical-parkinson.png",
-    imageFocus: { position: "32% 45%", zoom: 1.6 },
+    imageFocus: { position: "30% 45%", zoom: 1.3 },
     kind: "professionnel",
     tags: ["Recherche clinique", "Deep tech"],
     caseStudy: {
@@ -222,11 +230,14 @@ export const projects: Project[] = [
     slug: "application-suivi-rch",
     title: "Application de suivi pour la rectocolite hémorragique",
     shortTitle: "Application de suivi RCH",
-    summary: "Suivi des poussées de RCH pour les patients",
+    pitch: "Suivi des poussées de RCH, prototypé avec l'IA générative",
+    metrics: "3 semaines de développement · 7-8 itérations",
+    personalRole: "Projet personnel · Product Manager et développeur",
     description:
       "Application dédiée au suivi personnalisé des patients atteints de rectocolite hémorragique, pour une meilleure adhésion thérapeutique et un suivi proactif des poussées.",
     image: "application-suivi-rch.PNG",
-    imageFocus: { position: "50% 43%", zoom: 1.6 },
+    // Peu de zoom : titre « Répartition des scores », histogramme et cartes de pourcentages visibles.
+    imageFocus: { position: "50% 10%", zoom: 1 },
     kind: "personnel",
     tags: ["Prototypage IA", "Maladie chronique"],
     caseStudy: {

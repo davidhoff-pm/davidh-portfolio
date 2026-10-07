@@ -34,7 +34,7 @@ export const education: Education[] = [
 
 // Affichée seulement sur les écrans assez hauts.
 export const approach: string[] = [
-  "Je parle le langage des soignants",
-  "Conformité pensée dès la conception",
-  "Discovery avant delivery",
+  "Je pars du parcours de soin réel pour trouver ce qui améliore la prise en charge.",
+  "Je prototype avec l'IA générative pour tester une idée avant de la faire développer.",
+  "Ex-responsable R&D d'un dispositif médical : la conformité MDR fait partie de la conception.",
 ];

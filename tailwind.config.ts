@@ -21,7 +21,9 @@ export default {
         snug: { raw: "(min-width: 1024px) and (max-height: 719px)" },
         // Écrans de bureau plus hauts (ex. 1440x900) : un peu plus d'air, projets en 2x2.
         tall: { raw: "(min-width: 1024px) and (min-height: 820px)" },
-        // Écrans hauts et larges : assez de place pour les descriptions complètes d'expérience.
+        // Bureau assez haut pour « Mon approche » dans la carte identité (ex. 1366x768).
+        airy: { raw: "(min-width: 1280px) and (min-height: 760px)" },
+        // Écrans hauts et larges : descriptions complètes des projets.
         roomy: { raw: "(min-width: 1280px) and (min-height: 820px)" },
       },
       fontFamily: {

@@ -5,7 +5,8 @@ export const SITE_TITLE = "David Hoffnung — Product Manager santé numérique"
 
 export const profile = {
   name: "David Hoffnung",
-  role: "Product Manager · Docteur en Pharmacie",
+  // Affichés séparés par « · » ; le séparateur disparaît quand la ligne se coupe.
+  roles: ["Product Manager", "Docteur en Pharmacie"],
   location: "Montpellier · Remote / hybride",
   pitch:
     "Je conçois des logiciels utilisés au quotidien par des professionnels de santé, de la discovery terrain à la conformité réglementaire.",

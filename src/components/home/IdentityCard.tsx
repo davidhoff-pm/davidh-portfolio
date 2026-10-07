@@ -23,7 +23,20 @@ const IdentityCard = ({ className }: { className?: string }) => (
         <h1 className="font-serif text-[clamp(1.6rem,7vw,2rem)] font-normal leading-none tracking-[-0.01em] bento:text-[38px]">
           {profile.name}
         </h1>
-        <p className="mt-2 text-[14px] font-medium leading-5 text-primary [text-wrap:balance]">{profile.role}</p>
+        {/* Séparateur « · » placé dans la marge gauche de chaque élément : le premier de chaque
+            ligne est rogné par overflow-hidden, donc jamais de point orphelin au retour à la ligne. */}
+        <p className="mt-2 overflow-hidden text-[14px] font-medium leading-5 text-primary">
+          <span className="-ml-4 flex flex-wrap">
+            {profile.roles.map((role) => (
+              <span
+                key={role}
+                className="relative whitespace-nowrap pl-4 before:absolute before:left-1.5 before:content-['·']"
+              >
+                {role}
+              </span>
+            ))}
+          </span>
+        </p>
       </div>
     </div>
 
@@ -34,11 +47,12 @@ const IdentityCard = ({ className }: { className?: string }) => (
       {profile.location}
     </p>
 
-    {/* Approche : seulement si la hauteur d'écran le permet, en discret. */}
-    <ul aria-label="Mon approche" className="mt-4 hidden space-y-1 border-t pt-4 tall:block">
+    {/* Approche : visible sur mobile/tablette et sur bureau dès 1280x760 ; masquée sur les
+        bureaux plus bas (1280x650, 1280x720) où elle ferait déborder la colonne. */}
+    <ul aria-label="Mon approche" className="mt-4 space-y-1.5 border-t pt-4 bento:hidden airy:block">
       {approach.map((item) => (
         <li key={item} className="flex items-baseline gap-2 text-[13px] leading-[18px] text-muted-foreground">
-          <span aria-hidden className="size-1 shrink-0 translate-y-[-2px] rounded-full bg-primary" />
+          <span aria-hidden className="size-1 shrink-0 translate-y-[-3px] rounded-full bg-primary" />
           {item}
         </li>
       ))}

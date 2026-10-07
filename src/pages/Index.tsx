@@ -7,7 +7,6 @@ import ExperienceCard from "@/components/home/ExperienceCard";
 import ExpertiseEducationCard from "@/components/home/ExpertiseEducationCard";
 import IdentityCard from "@/components/home/IdentityCard";
 import ProjectsCard from "@/components/home/ProjectsCard";
-import StatsCards from "@/components/home/StatsCards";
 import { experiences, getExperience, type Experience } from "@/data/experiences";
 import { profile, SITE_TITLE } from "@/data/profile";
 import { getProject, type Project } from "@/data/projects";
@@ -76,22 +75,21 @@ const Index = ({ panel }: IndexProps) => {
   return (
     <>
       {/* Bureau : grille 12 colonnes à hauteur d'écran fixe (100dvh), colonne profil (4) +
-          colonne travaux (8). Les gouttières étant identiques, les 4 chiffres clés tombent
-          exactement sur 2 colonnes chacun. Les rangées flexibles (Expérience, Projets) absorbent
-          la hauteur restante ; les images ne participent jamais au calcul des hauteurs.
+          colonne travaux (8). Les rangées flexibles (Expérience, Projets) absorbent la hauteur
+          restante ; les images ne participent jamais au calcul des hauteurs.
           Budget à 1280x650 (hauteur utile 626px, marges 12px) :
-          - gauche : identité ~272 + 12 + expérience ~304 = ~588
-          - droite : stats ~116 + 12 + projets (reste ~318) + 12 + expertise & formation ~168
-            → 3 vignettes : texte ~136 + image ~122 (l'image absorbe les écarts). */}
+          - gauche : identité ~272 (sans « Mon approche ») + 12 + expérience ~288 = ~572
+          - droite : projets (reste ~446) + 12 + expertise & formation ~168
+            → cartes projets : textes ~250 + vignette ~136 (≤ 38 %, elle absorbe les écarts).
+          À 1366x768 (736px) : identité avec « Mon approche » ~424 + 12 + expérience ~268 = ~704. */}
       <main className="mx-auto grid max-w-[1600px] grid-cols-1 gap-3 p-3 md:grid-cols-2 md:p-6 bento:h-dvh bento:grid-cols-12 bento:grid-rows-[minmax(0,1fr)] bento:p-4 snug:p-3 tall:gap-4 tall:p-5">
         <div className="contents bento:col-span-4 bento:flex bento:min-h-0 bento:flex-col bento:gap-3 tall:gap-4">
           <IdentityCard className="order-1 md:col-span-2 bento:order-none bento:shrink-0" />
-          <ExperienceCard className="order-4 bento:order-none bento:flex-1" />
+          <ExperienceCard className="order-3 bento:order-none bento:flex-1" />
         </div>
-        <div className="contents bento:col-span-8 bento:grid bento:min-h-0 bento:grid-cols-[minmax(0,1fr)] bento:grid-rows-[auto_minmax(0,1fr)_auto] bento:gap-3 tall:gap-4">
-          <StatsCards className="order-2 md:col-span-2 bento:order-none bento:col-span-1" />
-          <ProjectsCard className="order-3 md:col-span-2 bento:order-none bento:col-span-1" />
-          <ExpertiseEducationCard className="order-5 bento:order-none" />
+        <div className="contents bento:col-span-8 bento:grid bento:min-h-0 bento:grid-cols-[minmax(0,1fr)] bento:grid-rows-[minmax(0,1fr)_auto] bento:gap-3 tall:gap-4">
+          <ProjectsCard className="order-2 md:col-span-2 bento:order-none bento:col-span-1" />
+          <ExpertiseEducationCard className="order-4 bento:order-none" />
         </div>
       </main>
 

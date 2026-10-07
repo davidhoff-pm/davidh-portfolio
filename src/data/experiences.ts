@@ -35,9 +35,9 @@ export const experiences: Experience[] = [
     periodDetail: "Avril 2024 – Juillet 2025",
     title: "Product Manager",
     company: "Move In Med",
-    summary: "Télésurveillance : roadmap et delivery",
+    summary: "Roadmap nourrie par 150+ retours utilisateurs",
     description:
-      "Pilotage produit d'une plateforme de télésurveillance et de coordination des soins : roadmap, discovery, delivery et conformité MDR.",
+      "Pilotage produit d'une plateforme de télésurveillance et de coordination des soins : roadmap nourrie par 150+ retours utilisateurs, discovery, delivery et conformité MDR.",
     highlights: [
       "Élaboration de la roadmap produit avec 150+ retours utilisateurs",
       "Product Discovery : entretiens utilisateurs, maquettes Figma, définition des workflows",
