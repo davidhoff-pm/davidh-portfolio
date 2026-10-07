@@ -2,21 +2,21 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { asset } from "@/lib/utils";
-import { BentoCard, Chip, StatusBadge } from "./BentoCard";
+import { BentoCard, Chip } from "./BentoCard";
 
-// Bureau : 4 vignettes sur une rangée ; sous-grille = images de même hauteur sur une ligne,
-// textes alignés sur la suivante. Écrans hauts : 2x2, image à gauche, rangées de même hauteur.
-// La zone image prend toujours la place restante : c'est elle qui rétrécit, jamais le texte.
+// Bureau : 3 vignettes sur une rangée ; sous-grille = images de même hauteur sur une ligne,
+// textes alignés sur la suivante. La zone image prend la place restante : c'est elle qui
+// rétrécit, jamais le texte.
 const ProjectsCard = ({ className }: { className?: string }) => (
   <BentoCard title="Projets" className={className} bodyClassName="flex flex-col">
-    <ul className="grid gap-3 sm:grid-cols-2 bento:min-h-0 bento:flex-1 bento:grid-cols-4 bento:grid-rows-[minmax(0,1fr)_auto] bento:gap-y-0 tall:grid-cols-2 tall:grid-rows-[repeat(2,minmax(0,1fr))] tall:gap-4">
+    <ul className="grid gap-3 sm:grid-cols-3 bento:min-h-0 bento:flex-1 bento:grid-rows-[minmax(0,1fr)_auto] bento:gap-y-0 tall:gap-x-4">
       {projects.map((project) => (
         <li
           key={project.slug}
-          className="group relative flex flex-col overflow-hidden rounded-xl border bg-card transition-colors duration-150 hover:border-primary has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring bento:row-span-2 bento:grid bento:grid-rows-subgrid tall:row-span-1 tall:flex tall:flex-row"
+          className="group relative flex flex-col overflow-hidden rounded-xl border bg-card transition-colors duration-150 hover:border-primary has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring bento:row-span-2 bento:grid bento:grid-rows-subgrid"
         >
           {/* Capture posée sur un fond accent très pâle, cadrée sur la zone parlante. */}
-          <div className="vignette-media aspect-[16/9] shrink-0 bg-primary/[0.07] p-2 bento:aspect-auto bento:min-h-0 tall:w-[44%]">
+          <div className="vignette-media aspect-[16/9] shrink-0 bg-primary/[0.07] p-2 bento:aspect-auto bento:min-h-0">
             <div className="relative h-full overflow-hidden rounded-lg border border-primary/15 bg-card">
               <img
                 src={asset(project.image)}
@@ -31,7 +31,7 @@ const ProjectsCard = ({ className }: { className?: string }) => (
               />
             </div>
           </div>
-          <div className="flex min-w-0 flex-col gap-1 px-3 pb-3 pt-2.5 tall:flex-1 tall:justify-center tall:px-4">
+          <div className="flex min-w-0 flex-col gap-1 px-3 pb-3 pt-2.5 tall:px-4">
             <h3 className="flex items-start justify-between gap-3 text-[15px] font-semibold leading-5">
               {/* Lien étiré : toute la vignette est cliquable. */}
               <Link
@@ -48,7 +48,7 @@ const ProjectsCard = ({ className }: { className?: string }) => (
             </h3>
             <p className="text-[14px] leading-5 text-muted-foreground">{project.summary}</p>
             <div className="mt-1 flex">
-              {project.wip ? <StatusBadge>En cours</StatusBadge> : <Chip>{project.tags[0]}</Chip>}
+              <Chip>{project.tags[0]}</Chip>
             </div>
           </div>
         </li>

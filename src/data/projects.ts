@@ -41,9 +41,8 @@ export interface Project {
   image: string;
   imageFocus: ImageFocus;
   kind: "professionnel" | "personnel";
-  wip?: boolean;
   tags: string[];
-  caseStudy?: CaseStudy;
+  caseStudy: CaseStudy;
 }
 
 export const projects: Project[] = [
@@ -60,7 +59,7 @@ export const projects: Project[] = [
     tags: ["Migration produit", "User research"],
     caseStudy: {
       tagline:
-        "Comment j'ai orchestré la transition de 5 000+ patients vers une nouvelle génération d'outils de coordination des soins.",
+        "Comment j'ai préparé la migration d'une plateforme de 5 000+ patients vers une nouvelle génération d'outils de coordination des soins.",
       keyFigures: [
         { value: "5 000+", label: "patients sur la plateforme historique" },
         { value: "20", label: "entretiens approfondis en 4 mois" },
@@ -117,7 +116,7 @@ export const projects: Project[] = [
           "Retour terrain : les professionnels de santé ont particulièrement apprécié les tâches automatiques et les formulaires personnalisables.",
         ],
         business: [
-          "3 clients migrés avec succès, validant la stratégie de transition.",
+          "Migration préparée avec 20+ clients, 3 migrés pendant ma mission.",
           "30 % de réduction du temps de déploiement grâce au workflow de paramétrage.",
           "Amorce de la réduction des coûts de maintenance via la consolidation sur une seule plateforme.",
           "Ouverture confirmée vers le marché des CRT avec une solution adaptée.",
@@ -289,19 +288,6 @@ export const projects: Project[] = [
         "Passer d'un outil personnel à un produit public demande un saut qualitatif important (RGPD, chiffrement, support).",
       ],
     },
-  },
-  {
-    slug: "plateforme-panel-anticorps",
-    title: "Plateforme de création de panels d'anticorps",
-    shortTitle: "Plateforme panel d'anticorps",
-    summary: "Conception de panels d'anticorps pour la cytométrie de masse",
-    description:
-      "Application permettant aux chercheurs et techniciens de créer, gérer et exporter des panels d'anticorps pour des expériences d'imagerie par cytométrie de masse. Interface pour filtrer et sélectionner des anticorps selon différents critères, avec visualisation des métaux disponibles et export PDF/CSV.",
-    image: "plateforme-panel-anticorps.PNG",
-    imageFocus: { position: "45% 18%", zoom: 1.6 },
-    kind: "personnel",
-    wip: true,
-    tags: ["Outil de recherche", "B2B santé"],
   },
 ];
 

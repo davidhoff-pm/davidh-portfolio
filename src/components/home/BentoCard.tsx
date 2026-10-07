@@ -34,16 +34,3 @@ export const Chip = ({ children, className }: { children: ReactNode; className?:
     {children}
   </span>
 );
-
-// Badge de statut (distinct des tags) : fond accent plein.
-export const StatusBadge = ({ children, className }: { children: ReactNode; className?: string }) => (
-  <span
-    className={cn(
-      "inline-flex items-center gap-1.5 whitespace-nowrap rounded-md border border-primary bg-primary px-2 py-0.5 text-[13px] font-medium leading-[18px] text-primary-foreground",
-      className,
-    )}
-  >
-    <span aria-hidden className="size-1.5 rounded-full bg-primary-foreground/80" />
-    {children}
-  </span>
-);

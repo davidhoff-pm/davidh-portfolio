@@ -82,7 +82,7 @@ const Index = ({ panel }: IndexProps) => {
           Budget à 1280x650 (hauteur utile 626px, marges 12px) :
           - gauche : identité ~272 + 12 + expérience ~304 = ~588
           - droite : stats ~116 + 12 + projets (reste ~318) + 12 + expertise & formation ~168
-            → vignettes : texte ~156 + image ~102 (l'image absorbe les écarts). */}
+            → 3 vignettes : texte ~136 + image ~122 (l'image absorbe les écarts). */}
       <main className="mx-auto grid max-w-[1600px] grid-cols-1 gap-3 p-3 md:grid-cols-2 md:p-6 bento:h-dvh bento:grid-cols-12 bento:grid-rows-[minmax(0,1fr)] bento:p-4 snug:p-3 tall:gap-4 tall:p-5">
         <div className="contents bento:col-span-4 bento:flex bento:min-h-0 bento:flex-col bento:gap-3 tall:gap-4">
           <IdentityCard className="order-1 md:col-span-2 bento:order-none bento:shrink-0" />

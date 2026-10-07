@@ -1,7 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { Chip, StatusBadge } from "@/components/home/BentoCard";
+import { Chip } from "@/components/home/BentoCard";
 import { experiences } from "@/data/experiences";
 import type { Project } from "@/data/projects";
 import { asset } from "@/lib/utils";
@@ -16,26 +16,23 @@ const ProjectDetail = ({ project }: { project: Project }) => {
     <article className="space-y-8">
       <div className="space-y-4">
         <Dialog.Description className="text-[14px] leading-[22px] text-foreground">
-          {cs ? cs.tagline : project.description}
+          {cs.tagline}
         </Dialog.Description>
         <div className="flex flex-wrap items-center gap-1.5">
-          {project.wip && <StatusBadge>En cours</StatusBadge>}
           {project.tags.map((tag) => (
             <Chip key={tag}>{tag}</Chip>
           ))}
         </div>
       </div>
 
-      {cs && (
-        <dl className="grid grid-cols-2 gap-3">
-          {cs.keyFigures.map((figure) => (
-            <div key={figure.label} className="flex flex-col-reverse gap-2 rounded-xl border bg-background p-4">
-              <dt className="text-[14px] leading-5 text-muted-foreground">{figure.label}</dt>
-              <dd className="font-serif text-[clamp(1.6rem,6vw,2.375rem)] leading-none text-primary">{figure.value}</dd>
-            </div>
-          ))}
-        </dl>
-      )}
+      <dl className="grid grid-cols-2 gap-3">
+        {cs.keyFigures.map((figure) => (
+          <div key={figure.label} className="flex flex-col-reverse gap-2 rounded-xl border bg-background p-4">
+            <dt className="text-[14px] leading-5 text-muted-foreground">{figure.label}</dt>
+            <dd className="font-serif text-[clamp(1.6rem,6vw,2.375rem)] leading-none text-primary">{figure.value}</dd>
+          </div>
+        ))}
+      </dl>
 
       <figure className="rounded-xl bg-primary/[0.07] p-3">
         <img
@@ -45,8 +42,7 @@ const ProjectDetail = ({ project }: { project: Project }) => {
         />
       </figure>
 
-      {cs ? (
-        <>
+      <>
           <DetailSection title="Contexte">
             <BulletList items={cs.context} />
           </DetailSection>
@@ -89,12 +85,7 @@ const ProjectDetail = ({ project }: { project: Project }) => {
           <DetailSection title="Apprentissages">
             <BulletList items={cs.learnings} />
           </DetailSection>
-        </>
-      ) : (
-        <p className="rounded-xl border border-dashed px-4 py-3 text-[14px] leading-5 text-muted-foreground">
-          Projet personnel en cours de développement.
-        </p>
-      )}
+      </>
 
       {relatedExperience && (
         <Link
