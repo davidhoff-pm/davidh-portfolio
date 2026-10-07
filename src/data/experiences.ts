@@ -18,12 +18,12 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     slug: "klanik-product-manager",
-    period: "2026 – aujourd'hui",
+    period: "2026 – auj.",
     periodDetail: "2026 – aujourd'hui",
     title: "Product Manager",
     company: "Klanik",
     companyNote: "En mission chez un éditeur de logiciel de santé",
-    summary: "Nouveau logiciel métier pour soignants libéraux",
+    summary: "Logiciel métier pour soignants libéraux",
     description:
       "Product Manager d'un nouveau logiciel métier pour les professionnels de santé libéraux.",
     highlights: [],
@@ -35,7 +35,7 @@ export const experiences: Experience[] = [
     periodDetail: "Avril 2024 – Juillet 2025",
     title: "Product Manager",
     company: "Move In Med",
-    summary: "Télésurveillance : roadmap, discovery, delivery",
+    summary: "Télésurveillance : roadmap et delivery",
     description:
       "Pilotage produit d'une plateforme de télésurveillance et de coordination des soins : roadmap, discovery, delivery et conformité MDR.",
     highlights: [
@@ -45,7 +45,7 @@ export const experiences: Experience[] = [
       "Transition réussie de +20 clients vers nouvelle plateforme",
       "Conformité MDR en collaboration avec la responsable QARA",
     ],
-    tags: ["Product Strategy", "Agile", "User Research", "Figma", "MDR"],
+    tags: ["Product strategy", "Scrum"],
     projectSlug: "plateforme-telesurveillance",
   },
   {
@@ -63,7 +63,7 @@ export const experiences: Experience[] = [
       "Veilles scientifiques et benchmarks concurrentiels",
       "Paramétrage personnalisé des solutions clients",
     ],
-    tags: ["Innovation", "Télésurveillance", "Change Management"],
+    tags: ["Innovation", "Conduite du changement"],
   },
   {
     slug: "resilient-innovation-responsable-rd",
@@ -71,7 +71,7 @@ export const experiences: Experience[] = [
     periodDetail: "Septembre 2017 – Avril 2023",
     title: "Responsable R&D",
     company: "Resilient Innovation",
-    summary: "DM classe I Parkinson · ISO 13485 · MDR",
+    summary: "Dispositif médical de classe I, Parkinson",
     description:
       "Développement d'un dispositif médical de classe I pour les patients atteints de la maladie de Parkinson.",
     highlights: [
@@ -81,7 +81,7 @@ export const experiences: Experience[] = [
       "Coordination partenaires techniques et animation réunions KOLs",
       "Rédaction protocoles cliniques et recherche de financements",
     ],
-    tags: ["R&D", "ISO 13485", "MDR", "Dispositifs Médicaux"],
+    tags: ["R&D", "Système qualité"],
     projectSlug: "dispositif-medical-parkinson",
   },
 ];

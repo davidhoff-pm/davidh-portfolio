@@ -1,23 +1,14 @@
-// Compétences, formation et approche.
+// Expertise, formation et approche.
 
-export interface ExpertiseGroup {
-  label: string;
-  skills: string[];
-}
-
-export const expertise: ExpertiseGroup[] = [
-  {
-    label: "Produit",
-    skills: ["Discovery", "Roadmap", "Priorisation", "Delivery Agile", "User research", "Figma"],
-  },
-  {
-    label: "Santé & réglementaire",
-    skills: ["MDR 2017/745", "ISO 13485", "RGPD", "HDS", "Dispositifs médicaux", "Télésurveillance"],
-  },
-  {
-    label: "IA & data",
-    skills: ["IA générative appliquée au produit", "Prototypage IA", "SQL", "KPI"],
-  },
+// Compétences différenciantes, affichées en chips dans la carte « Expertise & formation ».
+export const expertise: string[] = [
+  "MDR 2017/745",
+  "ISO 13485",
+  "RGPD / HDS",
+  "Dispositifs médicaux",
+  "Discovery terrain avec soignants",
+  "Delivery Agile",
+  "IA générative appliquée au produit",
 ];
 
 export interface Education {
@@ -29,18 +20,19 @@ export interface Education {
 
 export const education: Education[] = [
   {
-    degree: "Product Manager",
-    institution: "Thiga",
-    period: "2025",
-  },
-  {
     degree: "Docteur en Pharmacie",
     institution: "Université de Montpellier",
     period: "2012 – 2018",
-    note: "Thèse : maladie de Parkinson et dispositifs médicaux",
+    note: "Thèse : Parkinson et dispositifs médicaux",
+  },
+  {
+    degree: "Formation Product Management",
+    institution: "Thiga",
+    period: "2025",
   },
 ];
 
+// Affichée seulement sur les écrans assez hauts.
 export const approach: string[] = [
   "Je parle le langage des soignants",
   "Conformité pensée dès la conception",

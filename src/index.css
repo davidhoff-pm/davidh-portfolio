@@ -23,7 +23,8 @@ Toutes les couleurs sont en HSL. */
     --secondary-foreground: 240 6% 10%;
 
     --muted: 60 9% 95%;
-    --muted-foreground: 240 4% 46%; /* #71717A */
+    --muted-foreground: 240 5% 34%; /* #52525B */
+    --subtle: 240 5% 26%; /* #3F3F46 : sur-titres de cartes */
 
     --accent: 60 9% 95%;
     --accent-foreground: 240 6% 10%;
@@ -31,8 +32,8 @@ Toutes les couleurs sont en HSL. */
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 8% 89%;
-    --input: 40 8% 89%;
+    --border: 40 6% 84%;
+    --input: 40 6% 84%;
     --ring: 175 77% 26%;
 
     /* Rayon des composants (boutons, chips). Les cartes utilisent rounded-2xl (16px). */
@@ -57,13 +58,14 @@ Toutes les couleurs sont en HSL. */
       --secondary-foreground: 0 0% 96%;
 
       --muted: 240 4% 15%;
-      --muted-foreground: 240 5% 65%;
+      --muted-foreground: 240 5% 70%;
+      --subtle: 240 5% 82%;
 
       --accent: 240 4% 15%;
       --accent-foreground: 0 0% 96%;
 
-      --border: 240 4% 18%;
-      --input: 240 4% 18%;
+      --border: 240 4% 22%;
+      --input: 240 4% 22%;
       --ring: 173 58% 52%;
     }
   }
@@ -81,6 +83,22 @@ Toutes les couleurs sont en HSL. */
   body {
     @apply bg-background font-sans text-foreground antialiased;
     font-feature-settings: "cv11", "ss01";
+  }
+}
+
+/* Échelle typographique : 13px (méta, sur-titres), 14px (corps), 20px serif (titres),
+38px serif (affichage : nom, chiffres). */
+@layer components {
+  .t-eyebrow {
+    @apply text-[13px] font-semibold uppercase leading-[18px] tracking-[0.06em] text-subtle;
+  }
+
+  .t-title {
+    @apply font-serif text-[20px] font-normal leading-6 tracking-[-0.005em];
+  }
+
+  .t-display {
+    @apply font-serif text-[38px] font-normal leading-none tracking-[-0.01em];
   }
 }
 

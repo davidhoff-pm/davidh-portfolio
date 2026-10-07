@@ -1,4 +1,5 @@
 // Chiffres clés affichés sous forme de petites cartes.
+// Uniquement des chiffres présents dans le contenu du site (expériences, études de cas).
 
 export interface Stat {
   value: string;
@@ -6,8 +7,9 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { value: "2017", label: "en santé depuis, R&D puis produit" },
-  { value: "150+", label: "retours utilisateurs dans la roadmap" },
-  { value: "20+", label: "clients migrés" },
-  { value: "4", label: "releases trimestrielles" },
+  // Depuis septembre 2017 (Resilient Innovation) : à mettre à jour chaque année.
+  { value: "9 ans", label: "dans la santé, de la R&D au produit" },
+  { value: "5 000+", label: "patients sur la plateforme migrée" },
+  { value: "20+", label: "clients accompagnés dans la migration de plateforme" },
+  { value: "150+", label: "retours utilisateurs intégrés à la roadmap" },
 ];

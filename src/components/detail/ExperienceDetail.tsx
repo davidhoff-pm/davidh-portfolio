@@ -13,12 +13,12 @@ const ExperienceDetail = ({ experience }: { experience: Experience }) => {
   return (
     <article className="space-y-8">
       <div className="space-y-3">
-        <p className="text-sm text-muted-foreground">
-          <span className="font-medium text-foreground">{experience.company}</span>
+        <p className="text-[14px] leading-5 text-muted-foreground">
+          <span className="font-medium text-primary">{experience.company}</span>
           {experience.companyNote && ` · ${experience.companyNote}`}
-          <span className="block tabular-nums">{experience.periodDetail}</span>
+          <span className="block text-[13px] leading-[18px] tabular-nums">{experience.periodDetail}</span>
         </p>
-        <Dialog.Description className="text-[15px] leading-relaxed text-foreground/85">
+        <Dialog.Description className="text-[14px] leading-[22px] text-foreground">
           {experience.description}
         </Dialog.Description>
       </div>
@@ -44,12 +44,12 @@ const ExperienceDetail = ({ experience }: { experience: Experience }) => {
           to={`/projets/${project.slug}`}
           state={location.state}
           replace
-          className="flex min-h-11 items-center justify-between gap-3 rounded-xl border px-4 py-3 text-sm transition-colors hover:border-foreground/25 hover:bg-muted"
+          className="group flex min-h-11 items-center justify-between gap-3 rounded-xl border px-4 py-3 text-[14px] leading-5 transition-colors hover:border-primary"
         >
           <span>
-            Étude de cas : <span className="font-medium">{project.shortTitle}</span>
+            Étude de cas : <span className="font-medium text-primary">{project.shortTitle}</span>
           </span>
-          <ArrowRight aria-hidden className="size-4 shrink-0 text-muted-foreground" />
+          <ArrowRight aria-hidden className="size-4 shrink-0 text-primary transition-transform group-hover:translate-x-0.5" />
         </Link>
       )}
     </article>

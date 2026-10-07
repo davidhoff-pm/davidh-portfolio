@@ -17,21 +17,21 @@ const DetailPanel = ({ open, onClose, eyebrow, title, contentKey, children }: De
     <Dialog.Portal>
       <Dialog.Overlay className="fixed inset-0 z-40 bg-zinc-950/25 duration-200 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
       <Dialog.Content className="fixed inset-y-0 right-0 z-50 flex w-full flex-col bg-card shadow-2xl duration-200 focus:outline-none data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-right-6 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-right-6 sm:max-w-[560px] sm:border-l">
-        <header className="flex items-start justify-between gap-4 border-b px-5 py-4 sm:px-7">
-          <div className="min-w-0 pt-1">
-            <p className="text-[13px] font-medium uppercase tracking-[0.08em] text-muted-foreground">{eyebrow}</p>
-            <Dialog.Title className="mt-1 text-xl font-semibold leading-snug tracking-tight">{title}</Dialog.Title>
-          </div>
+        <header className="flex items-center justify-between gap-4 border-b py-2 pl-4 pr-2 sm:pl-7 sm:pr-4">
+          <p className="t-eyebrow">{eyebrow}</p>
           <Dialog.Close
             aria-label="Fermer le panneau"
-            className="-mr-2 inline-flex size-11 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <X aria-hidden className="size-5" />
           </Dialog.Close>
         </header>
         {/* La clé remet le défilement en haut quand on passe d'un détail à un autre. */}
-        <div key={contentKey} className="flex-1 overflow-y-auto px-5 py-6 sm:px-7">
-          {children}
+        <div key={contentKey} className="flex-1 overflow-y-auto px-4 pb-10 pt-6 sm:px-7">
+          <Dialog.Title className="font-serif text-[clamp(1.6rem,6vw,2.375rem)] font-normal leading-[1.1] tracking-[-0.01em]">
+            {title}
+          </Dialog.Title>
+          <div className="mt-4">{children}</div>
         </div>
       </Dialog.Content>
     </Dialog.Portal>

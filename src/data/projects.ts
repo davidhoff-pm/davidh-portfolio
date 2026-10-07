@@ -25,6 +25,13 @@ export interface CaseStudy {
   learnings: string[];
 }
 
+export interface ImageFocus {
+  // Valeur CSS object-position : zone de la capture à montrer dans la vignette (ex. "30% 40%").
+  position: string;
+  // Agrandissement autour de cette zone (1 = capture entière).
+  zoom: number;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -32,6 +39,7 @@ export interface Project {
   summary: string;
   description: string;
   image: string;
+  imageFocus: ImageFocus;
   kind: "professionnel" | "personnel";
   wip?: boolean;
   tags: string[];
@@ -43,12 +51,13 @@ export const projects: Project[] = [
     slug: "plateforme-telesurveillance",
     title: "Plateforme de télésurveillance pour pathologies chroniques",
     shortTitle: "Plateforme de télésurveillance",
-    summary: "Migration de 5000+ patients",
+    summary: "Suivi des patients en pathologie chronique",
     description:
       "Solution digitale complète pour le suivi des patients en pathologie chronique avec alertes en temps réel.",
     image: "plateforme-telesurveillance.png",
+    imageFocus: { position: "62% 30%", zoom: 1.35 },
     kind: "professionnel",
-    tags: ["Migration produit", "User Research", "Agile", "MDR"],
+    tags: ["Migration produit", "User research"],
     caseStudy: {
       tagline:
         "Comment j'ai orchestré la transition de 5000+ patients vers une nouvelle génération d'outils de coordination des soins.",
@@ -127,12 +136,13 @@ export const projects: Project[] = [
     slug: "dispositif-medical-parkinson",
     title: "Dispositif médical innovant pour la maladie de Parkinson",
     shortTitle: "Dispositif médical Parkinson",
-    summary: "DM classe I · 200 patients équipés",
+    summary: "Classe I, 200 patients équipés",
     description:
       "Développement d'un dispositif médical innovant de classe I pour l'amélioration de la qualité de vie des patients.",
     image: "dispositif-medical-parkinson.png",
+    imageFocus: { position: "20% 40%", zoom: 1.4 },
     kind: "professionnel",
-    tags: ["R&D", "ISO 13485", "Clinical Research", "Dispositifs Médicaux", "MDR", "Deep Tech"],
+    tags: ["Recherche clinique", "Deep tech"],
     caseStudy: {
       tagline:
         "5 ans à transformer une idée scientifique en solution concrète pour 200 patients atteints de troubles de la marche.",
@@ -213,12 +223,13 @@ export const projects: Project[] = [
     slug: "application-suivi-rch",
     title: "Application de suivi pour la rectocolite hémorragique",
     shortTitle: "Application de suivi RCH",
-    summary: "Projet perso prototypé avec l'IA",
+    summary: "Suivi des poussées de RCH pour les patients",
     description:
       "Application dédiée au suivi personnalisé des patients atteints de rectocolite hémorragique, pour une meilleure adhésion thérapeutique et un suivi proactif des poussées.",
     image: "application-suivi-rch.PNG",
+    imageFocus: { position: "50% 22%", zoom: 1.3 },
     kind: "personnel",
-    tags: ["IA générative", "Prototypage rapide", "Mobile Health", "Chronic Disease"],
+    tags: ["Prototypage IA", "Maladie chronique"],
     caseStudy: {
       tagline:
         "Un outil personnel de suivi médical développé en 3 semaines, d'un besoin personnel à une solution fonctionnelle grâce à l'IA générative.",
@@ -283,13 +294,14 @@ export const projects: Project[] = [
     slug: "plateforme-panel-anticorps",
     title: "Plateforme de création de panels d'anticorps",
     shortTitle: "Plateforme panel d'anticorps",
-    summary: "Panels de cytométrie de masse",
+    summary: "Conception de panels d'anticorps pour la cytométrie de masse",
     description:
       "Application permettant aux chercheurs et techniciens de créer, gérer et exporter des panels d'anticorps pour des expériences d'imagerie par cytométrie de masse. Interface pour filtrer et sélectionner des anticorps selon différents critères, avec visualisation des métaux disponibles et export PDF/CSV.",
     image: "plateforme-panel-anticorps.PNG",
+    imageFocus: { position: "25% 30%", zoom: 1.5 },
     kind: "personnel",
     wip: true,
-    tags: ["Research Tools", "B2B Healthcare", "Product Management"],
+    tags: ["Outil de recherche", "B2B santé"],
   },
 ];
 

@@ -1,33 +1,25 @@
 import { useId, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
+// Surface commune à toutes les cartes : même rayon, même bordure, même padding.
+export const cardSurface = "rounded-2xl border bg-card p-4 tall:p-5";
+
 interface BentoCardProps {
   title: string;
-  action?: ReactNode;
   className?: string;
   bodyClassName?: string;
   children: ReactNode;
 }
 
-// Carte de la grille : fond blanc, bordure fine, titre court en petites capitales grises.
-export const BentoCard = ({ title, action, className, bodyClassName, children }: BentoCardProps) => {
+export const BentoCard = ({ title, className, bodyClassName, children }: BentoCardProps) => {
   const titleId = useId();
 
   return (
-    <section
-      aria-labelledby={titleId}
-      className={cn(
-        "flex flex-col rounded-2xl border bg-card p-5 bento:min-h-0 bento:px-4 bento:py-3.5 tall:p-5",
-        className,
-      )}
-    >
-      <div className="mb-3 flex items-baseline justify-between gap-3 bento:mb-2 tall:mb-3">
-        <h2 id={titleId} className="text-[13px] font-medium uppercase leading-4 tracking-[0.08em] text-muted-foreground">
-          {title}
-        </h2>
-        {action}
-      </div>
-      <div className={cn("flex-1 bento:min-h-0", bodyClassName)}>{children}</div>
+    <section aria-labelledby={titleId} className={cn(cardSurface, "flex flex-col", className)}>
+      <h2 id={titleId} className="t-eyebrow mb-2.5 tall:mb-3">
+        {title}
+      </h2>
+      <div className={cn("flex-1", bodyClassName)}>{children}</div>
     </section>
   );
 };
@@ -35,10 +27,23 @@ export const BentoCard = ({ title, action, className, bodyClassName, children }:
 export const Chip = ({ children, className }: { children: ReactNode; className?: string }) => (
   <span
     className={cn(
-      "inline-flex items-center whitespace-nowrap rounded-md border bg-background px-2 py-px text-[12.5px] leading-5 text-foreground/80",
+      "inline-flex items-center whitespace-nowrap rounded-md border bg-background px-2 py-0.5 text-[13px] leading-[18px] text-foreground",
       className,
     )}
   >
+    {children}
+  </span>
+);
+
+// Badge de statut (distinct des tags) : fond accent plein.
+export const StatusBadge = ({ children, className }: { children: ReactNode; className?: string }) => (
+  <span
+    className={cn(
+      "inline-flex items-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2 py-0.5 text-[13px] font-medium leading-[18px] text-primary-foreground",
+      className,
+    )}
+  >
+    <span aria-hidden className="size-1.5 rounded-full bg-primary-foreground/80" />
     {children}
   </span>
 );

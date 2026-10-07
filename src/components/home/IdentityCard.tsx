@@ -1,71 +1,51 @@
-import { Check, Download, GraduationCap, Linkedin, Mail, MapPin } from "lucide-react";
+import { Download, Linkedin, Mail, MapPin } from "lucide-react";
 import { approach } from "@/data/expertise";
 import { CV_FILE, LINKEDIN_URL, profile } from "@/data/profile";
 import { asset, cn } from "@/lib/utils";
+import { cardSurface } from "./BentoCard";
 
 const buttonBase =
-  "inline-flex h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-card bento:h-9 tall:h-10 [&_svg]:size-4";
+  "inline-flex h-11 items-center justify-center gap-2 rounded-lg px-4 text-[14px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-card bento:h-10 [&_svg]:size-4";
 const primaryButton = cn(buttonBase, "bg-primary text-primary-foreground hover:bg-primary/90");
-const secondaryButton = cn(buttonBase, "border bg-card text-foreground hover:border-foreground/25 hover:bg-muted");
+const secondaryButton = cn(buttonBase, "border bg-card text-foreground hover:border-primary/60 hover:text-primary");
 
 const IdentityCard = ({ className }: { className?: string }) => (
-  <section
-    aria-label="Présentation"
-    className={cn(
-      "flex flex-col rounded-2xl border bg-card p-5 bento:min-h-0 bento:overflow-y-auto bento:p-5 tall:p-6",
-      className,
-    )}
-  >
+  <section aria-label="Présentation" className={cn(cardSurface, "flex flex-col", className)}>
     <div className="flex items-center gap-4">
       <img
         src={asset(profile.photo)}
         alt={`Portrait de ${profile.name}`}
-        width={80}
-        height={80}
-        className="size-16 shrink-0 rounded-xl border object-cover tall:size-20"
+        width={72}
+        height={72}
+        className="size-[72px] shrink-0 rounded-2xl bg-primary/10 object-cover object-[50%_35%] ring-1 ring-primary/30 ring-offset-2 ring-offset-card"
       />
       <div className="min-w-0">
-        <h1 className="text-[30px] font-semibold leading-[1.1] tracking-tight tall:text-[36px]">{profile.name}</h1>
-        <p className="mt-1.5 text-[15px] font-medium leading-snug">{profile.role}</p>
+        <h1 className="font-serif text-[clamp(1.6rem,7vw,2rem)] font-normal leading-none tracking-[-0.01em] bento:text-[38px]">
+          {profile.name}
+        </h1>
+        <p className="mt-2 text-[14px] font-medium leading-5 text-primary [text-wrap:balance]">{profile.role}</p>
       </div>
     </div>
 
-    <p className="mt-4 text-[15px] leading-relaxed text-foreground/80 tall:mt-5">{profile.pitch}</p>
+    <p className="mt-4 text-[14px] leading-[22px] text-foreground">{profile.pitch}</p>
 
-    <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground tall:mt-5 tall:space-y-2">
-      <li className="flex items-center gap-2.5">
-        <GraduationCap aria-hidden className="size-4 shrink-0" />
-        {profile.credential}
-      </li>
-      <li className="flex items-center gap-2.5">
-        <MapPin aria-hidden className="size-4 shrink-0" />
-        {profile.location}
-      </li>
-      <li className="flex items-center gap-2.5">
-        <Mail aria-hidden className="size-4 shrink-0" />
-        <a href={`mailto:${profile.email}`} className="underline-offset-4 hover:text-foreground hover:underline">
-          {profile.email}
-        </a>
-      </li>
+    <p className="mt-3 flex items-center gap-2 text-[13px] leading-[18px] text-muted-foreground">
+      <MapPin aria-hidden className="size-4 shrink-0" />
+      {profile.location}
+    </p>
+
+    {/* Approche : seulement si la hauteur d'écran le permet, en discret. */}
+    <ul aria-label="Mon approche" className="mt-4 hidden space-y-1 border-t pt-4 tall:block">
+      {approach.map((item) => (
+        <li key={item} className="flex items-baseline gap-2 text-[13px] leading-[18px] text-muted-foreground">
+          <span aria-hidden className="size-1 shrink-0 translate-y-[-2px] rounded-full bg-primary" />
+          {item}
+        </li>
+      ))}
     </ul>
 
-    {/* Approche : masquée sur les écrans de bureau trop bas pour tenir sans défilement. */}
-    <div className="mt-5 border-t pt-4 short:hidden">
-      <h2 className="text-[13px] font-medium uppercase leading-4 tracking-[0.08em] text-muted-foreground">
-        Mon approche
-      </h2>
-      <ul className="mt-2.5 space-y-1.5 text-sm">
-        {approach.map((item) => (
-          <li key={item} className="flex items-start gap-2.5">
-            <Check aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div className="mt-6 flex flex-wrap gap-2 bento:mt-auto bento:pt-5">
-      <a href={`mailto:${profile.email}`} className={primaryButton}>
+    <div className="mt-5 grid grid-cols-2 gap-2 bento:mt-auto bento:flex bento:flex-wrap bento:pt-5">
+      <a href={`mailto:${profile.email}`} title={profile.email} className={primaryButton}>
         <Mail aria-hidden />
         Me contacter
       </a>
@@ -76,7 +56,7 @@ const IdentityCard = ({ className }: { className?: string }) => (
         </a>
       )}
       {CV_FILE && (
-        <a href={asset(CV_FILE)} download className={secondaryButton}>
+        <a href={asset(CV_FILE)} download className={cn(secondaryButton, "col-span-2")}>
           <Download aria-hidden />
           Télécharger le CV
         </a>

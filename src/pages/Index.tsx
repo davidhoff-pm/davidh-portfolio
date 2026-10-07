@@ -3,9 +3,8 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import DetailPanel from "@/components/detail/DetailPanel";
 import ExperienceDetail from "@/components/detail/ExperienceDetail";
 import ProjectDetail from "@/components/detail/ProjectDetail";
-import EducationCard from "@/components/home/EducationCard";
 import ExperienceCard from "@/components/home/ExperienceCard";
-import ExpertiseCard from "@/components/home/ExpertiseCard";
+import ExpertiseEducationCard from "@/components/home/ExpertiseEducationCard";
 import IdentityCard from "@/components/home/IdentityCard";
 import ProjectsCard from "@/components/home/ProjectsCard";
 import StatsCards from "@/components/home/StatsCards";
@@ -62,13 +61,19 @@ const Index = ({ panel }: IndexProps) => {
 
   return (
     <>
-      <main className="mx-auto grid max-w-[1600px] grid-cols-1 gap-3 p-4 sm:p-6 md:grid-cols-2 bento:h-dvh bento:grid-cols-12 bento:grid-rows-[auto_minmax(0,1fr)_auto] bento:p-5 tall:gap-4 tall:p-6">
-        <IdentityCard className="md:col-span-2 bento:col-span-4 bento:col-start-1 bento:row-span-2 bento:row-start-1" />
-        <StatsCards className="md:col-span-2 bento:col-span-8 bento:col-start-5 bento:row-start-1 tall:gap-4" />
-        <ProjectsCard className="md:col-span-2 bento:col-span-8 bento:col-start-5 bento:row-start-2" />
-        <ExperienceCard className="bento:col-span-4 bento:col-start-1 bento:row-start-3" />
-        <ExpertiseCard className="bento:col-span-5 bento:col-start-5 bento:row-start-3" />
-        <EducationCard className="md:col-span-2 bento:col-span-3 bento:col-start-10 bento:row-start-3" />
+      {/* Bureau : 12 colonnes, colonne profil (4) + colonne travaux (8). Les gouttières internes
+          étant identiques, les 4 chiffres clés tombent exactement sur 2 colonnes chacun.
+          Hauteur minimale = écran : le contenu ne défile jamais dans une carte. */}
+      <main className="mx-auto grid max-w-[1600px] grid-cols-1 gap-3 p-3 md:grid-cols-2 md:p-6 bento:min-h-dvh bento:grid-cols-12 bento:grid-rows-[1fr] bento:p-3 tall:gap-4 tall:p-5">
+        <div className="contents bento:col-span-4 bento:flex bento:flex-col bento:gap-3 tall:gap-4">
+          <IdentityCard className="order-1 md:col-span-2 bento:order-none bento:flex-1" />
+          <ExperienceCard className="order-4 bento:order-none" />
+        </div>
+        <div className="contents bento:col-span-8 bento:grid bento:grid-rows-[auto_1fr_auto] bento:gap-3 tall:gap-4">
+          <StatsCards className="order-2 md:col-span-2 bento:order-none" />
+          <ProjectsCard className="order-3 md:col-span-2 bento:order-none" />
+          <ExpertiseEducationCard className="order-5 bento:order-none" />
+        </div>
       </main>
 
       <DetailPanel
