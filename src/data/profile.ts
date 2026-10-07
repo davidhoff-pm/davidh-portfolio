@@ -14,9 +14,7 @@ export const profile = {
   email: "david.hoffnung@gmail.com",
 };
 
-// TODO : renseigner l'URL du profil LinkedIn (ex. "https://www.linkedin.com/in/...").
-// Le bouton LinkedIn reste masqué tant que cette valeur est vide.
-export const LINKEDIN_URL = "";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/david-hoffnung-bb0ab6a9";
 
 // TODO : déposer le CV dans /public (ex. "cv-david-hoffnung.pdf") et renseigner son nom ici.
 // Le bouton « Télécharger le CV » reste masqué tant que cette valeur est vide.
